@@ -1,11 +1,17 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import reactLogo from "./assets/react.svg";
 import { invoke } from "@tauri-apps/api/core";
 import "./App.css";
+import { useDragDrop } from "./hooks/useDragDrop";
 
 function App() {
   const [greetMsg, setGreetMsg] = useState("");
   const [name, setName] = useState("");
+
+  const targetRef = useRef(null);
+  const { isOverTarget } = useDragDrop(targetRef, (paths) => {
+    console.log("🔥", paths);
+  });
 
   async function greet() {
     // Learn more about Tauri commands at https://tauri.app/develop/calling-rust/
@@ -15,6 +21,13 @@ function App() {
   return (
     <main className="container">
       <h1>Welcome to Tauri + React</h1>
+
+      <div
+        ref={targetRef}
+        className="w-200px h-200px bg-red color-white flex-c-c"
+      >
+        {isOverTarget.toString()}
+      </div>
 
       <div className="row">
         <a href="https://vitejs.dev" target="_blank">
