@@ -13,12 +13,12 @@ app.plugins[0].json_dumps = lambda *args, **kwargs: json.dumps(
 ).encode("utf8")
 
 
-@app.get("/status")
-def get_status():
-    return {"status": "started"}
+@app.post("/start")
+def start():
+    return {"success": "true"}
 
 
-@app.get("/prepare")
+@app.post("/prepare")
 def prepare():
     return {"success": load_models()}
 
