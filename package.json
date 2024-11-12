@@ -6,14 +6,14 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "build:python": "python -m nuitka --standalone --include-data-files=\"src-python/models/*.onnx=models/\" --output-dir=out src-python/server.py",
-    "test:python": "out/server.dist/server.bin data/input.jpg data/全智贤.jpg",
+    "build:server": "python -m nuitka --standalone --include-data-files=\"src-python/models/*.onnx=models/\" --output-dir=out src-python/server.py",
+    "start:server": "out/server.dist/server.bin",
     "preview": "vite preview",
     "tauri": "tauri"
   },
   "dependencies": {
     "@tauri-apps/api": "^2",
-    "@tauri-apps/plugin-shell": "^2",
+    "@tauri-apps/plugin-shell": "^2.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
