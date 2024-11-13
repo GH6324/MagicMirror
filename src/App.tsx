@@ -3,10 +3,18 @@ import { useServer } from "./hooks/useServer";
 
 import "./App.css";
 import { useSwapFace } from "./hooks/useSwapFace";
+import { useEffect, useState } from "react";
+import { Server } from "./services/server";
 
 function App() {
   const { launch, status } = useServer();
   const { isSwapping, output, swapFace } = useSwapFace();
+
+  const [rootDir, setRootDir] = useState("");
+
+  useEffect(() => {
+    Server.rootDir().then((e) => setRootDir(e));
+  }, []);
 
   async function startSwap() {
     swapFace(
@@ -42,6 +50,7 @@ function App() {
         {status === "started" && <button onClick={startSwap}>Swap</button>}
       </form>
 
+      <p>rootDir:{rootDir}</p>
       <p>status:{status}</p>
       <p>isSwapping:{isSwapping}</p>
       <p>output:{output}</p>

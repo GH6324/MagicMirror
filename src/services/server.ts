@@ -1,4 +1,5 @@
 import { Child, Command } from "@tauri-apps/plugin-shell";
+import { homeDir, join } from "@tauri-apps/api/path";
 
 export type ServerStatus = "idle" | "launching" | "started" | "stopped";
 
@@ -12,15 +13,17 @@ class _Server {
   _baseURL = "http://127.0.0.1:8023";
   _childProcess?: Child;
 
+  async rootDir() {
+    const home = await homeDir();
+    return join(home, "MagicMirror");
+  }
+
   async launch(): Promise<boolean> {
     if (this._childProcess) {
       return true;
     }
     try {
-      this._childProcess = await Command.create(
-        "/Users/del/X/App/AI/MagicMirror/out/server.dist/server.bin"
-      ).spawn();
-      console.log(this._childProcess.pid);
+      this._childProcess = await Command.create("server").spawn();
       return true;
     } catch (e) {
       console.error(e);
