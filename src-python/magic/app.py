@@ -12,6 +12,13 @@ app.plugins[0].json_dumps = lambda *args, **kwargs: json.dumps(
     *args, ensure_ascii=False, **kwargs
 ).encode("utf8")
 
+# Enable CORS
+@app.hook("after_request")
+def enable_cors():
+    response.set_header("Access-Control-Allow-Origin", "*")
+    response.set_header("Access-Control-Allow-Methods", "GET, POST, OPTIONS")
+    response.set_header("Access-Control-Allow-Headers", "Content-Type")
+
 
 @app.get("/status")
 def status():
