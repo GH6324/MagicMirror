@@ -2,12 +2,21 @@
   "$schema": "../gen/schemas/desktop-schema.json",
   "identifier": "default",
   "description": "Capability for the main window",
-  "windows": [
-    "main"
-  ],
+  "windows": ["main"],
   "permissions": [
     "core:default",
     "shell:allow-open",
-    "shell:default"
+    "shell:allow-spawn",
+    "shell:default",
+    {
+      "identifier": "shell:allow-spawn",
+      "allow": [
+        {
+          "name": "/Users/del/X/App/AI/MagicMirror/out/server.dist/server.bin",
+          "cmd": "/Users/del/X/App/AI/MagicMirror/out/server.dist/server.bin",
+          "args": true
+        }
+      ]
+    }
   ]
 }

@@ -1,33 +1,23 @@
-import { useRef, useState } from "react";
 import reactLogo from "./assets/react.svg";
-import { invoke } from "@tauri-apps/api/core";
+import { useServer } from "./hooks/useServer";
+
 import "./App.css";
-import { useDragDrop } from "./hooks/useDragDrop";
+import { useSwapFace } from "./hooks/useSwapFace";
 
 function App() {
-  const [greetMsg, setGreetMsg] = useState("");
-  const [name, setName] = useState("");
+  const { launch, status } = useServer();
+  const { isSwapping, output, swapFace } = useSwapFace();
 
-  const targetRef = useRef(null);
-  const { isOverTarget } = useDragDrop(targetRef, (paths) => {
-    console.log("🔥", paths);
-  });
-
-  async function greet() {
-    // Learn more about Tauri commands at https://tauri.app/develop/calling-rust/
-    setGreetMsg(await invoke("greet", { name }));
+  async function startSwap() {
+    swapFace(
+      "/Users/del/X/App/AI/MagicMirror/data/input.jpg",
+      "/Users/del/X/App/AI/MagicMirror/data/全智贤.jpg"
+    );
   }
 
   return (
     <main className="container">
       <h1>Welcome to Tauri + React</h1>
-
-      <div
-        ref={targetRef}
-        className="w-200px h-200px bg-red color-white flex-c-c"
-      >
-        {isOverTarget.toString()}
-      </div>
 
       <div className="row">
         <a href="https://vitejs.dev" target="_blank">
@@ -42,21 +32,19 @@ function App() {
       </div>
       <p>Click on the Tauri, Vite, and React logos to learn more.</p>
 
-      <form
-        className="row"
-        onSubmit={(e) => {
-          e.preventDefault();
-          greet();
-        }}
-      >
+      <form className="row">
         <input
           id="greet-input"
-          onChange={(e) => setName(e.currentTarget.value)}
+          onChange={(e) => console.log(e.currentTarget.value)}
           placeholder="Enter a name..."
         />
-        <button type="submit">Greet</button>
+        {status !== "started" && <button onClick={launch}>Launch</button>}
+        {status === "started" && <button onClick={startSwap}>Swap</button>}
       </form>
-      <p>{greetMsg}</p>
+
+      <p>status:{status}</p>
+      <p>isSwapping:{isSwapping}</p>
+      <p>output:{output}</p>
     </main>
   );
 }

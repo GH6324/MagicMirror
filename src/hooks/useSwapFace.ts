@@ -1,27 +1,36 @@
-import { useCallback, useRef, useState } from "react";
+import { useCallback, useEffect } from "react";
 import { Server } from "../services/server";
+import { useXState } from "xsta";
+
+const kSwapFaceRefs: {
+  id: number;
+  cancel?: VoidFunction;
+} = {
+  id: 0,
+  cancel: undefined,
+};
 
 export function useSwapFace() {
-  const id = useRef(0);
-  const cancelPrevious = useRef<VoidFunction | null>(null);
-
-  const [isSwapping, setIsSwapping] = useState(false);
-  const [output, setOutput] = useState<string | null>(null);
+  const [isSwapping, setIsSwapping] = useXState("isSwapping", false);
+  const [output, setOutput] = useXState<string | null>("swapOutput", null);
 
   const swapFace = useCallback(
     async (inputImage: string, targetFace: string) => {
-      if (cancelPrevious.current) {
-        await cancelPrevious.current();
-      }
+      await kSwapFaceRefs.cancel?.();
       setIsSwapping(true);
-      const taskId = (id.current++).toString();
-      cancelPrevious.current = () => Server.cancelTask(taskId);
+      const taskId = (kSwapFaceRefs.id++).toString();
+      kSwapFaceRefs.cancel = async () => {
+        const success = await Server.cancelTask(taskId);
+        if (success) {
+          setIsSwapping(false);
+        }
+      };
       const result = await Server.createTask({
         id: taskId,
         inputImage,
         targetFace,
       });
-      cancelPrevious.current = null;
+      kSwapFaceRefs.cancel = undefined;
       setOutput(result);
       setIsSwapping(false);
       return result;
@@ -29,5 +38,16 @@ export function useSwapFace() {
     []
   );
 
-  return { swapFace, isSwapping, output };
+  useEffect(() => {
+    return () => {
+      kSwapFaceRefs.cancel?.();
+    };
+  }, []);
+
+  return {
+    isSwapping,
+    output,
+    swapFace,
+    cancel: () => kSwapFaceRefs.cancel?.(),
+  };
 }

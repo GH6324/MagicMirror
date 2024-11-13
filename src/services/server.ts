@@ -1,3 +1,7 @@
+import { Child, Command } from "@tauri-apps/plugin-shell";
+
+export type ServerStatus = "idle" | "launching" | "started" | "stopped";
+
 export interface Task {
   id: string;
   inputImage: string;
@@ -5,15 +9,44 @@ export interface Task {
 }
 
 class _Server {
-  baseURL = "http://127.0.0.1:8023";
+  _baseURL = "http://127.0.0.1:8023";
+  _childProcess?: Child;
 
-  async start(): Promise<boolean> {
+  async launch(): Promise<boolean> {
+    if (this._childProcess) {
+      return true;
+    }
     try {
-      const res = await fetch(`${this.baseURL}/start`, {
-        method: "post",
+      this._childProcess = await Command.create(
+        "/Users/del/X/App/AI/MagicMirror/out/server.dist/server.bin"
+      ).spawn();
+      console.log(this._childProcess.pid);
+      return true;
+    } catch (e) {
+      console.error(e);
+      return false;
+    }
+  }
+
+  async kill(): Promise<boolean> {
+    if (!this._childProcess) {
+      return true;
+    }
+    try {
+      await this._childProcess.kill();
+      return true;
+    } catch {
+      return false;
+    }
+  }
+
+  async status(): Promise<boolean> {
+    try {
+      const res = await fetch(`${this._baseURL}/status`, {
+        method: "get",
       });
       const data = await res.json();
-      return data.success || false;
+      return data.status === "started";
     } catch {
       return false;
     }
@@ -21,7 +54,7 @@ class _Server {
 
   async prepare(): Promise<boolean> {
     try {
-      const res = await fetch(`${this.baseURL}/prepare`, {
+      const res = await fetch(`${this._baseURL}/prepare`, {
         method: "post",
       });
       const data = await res.json();
@@ -33,7 +66,7 @@ class _Server {
 
   async createTask(task: Task): Promise<string | null> {
     try {
-      const res = await fetch(`${this.baseURL}/task`, {
+      const res = await fetch(`${this._baseURL}/task`, {
         method: "post",
         body: JSON.stringify(task),
       });
@@ -46,7 +79,7 @@ class _Server {
 
   async cancelTask(taskId: string): Promise<boolean> {
     try {
-      const res = await fetch(`${this.baseURL}/task/${taskId}`, {
+      const res = await fetch(`${this._baseURL}/task/${taskId}`, {
         method: "delete",
       });
       const data = await res.json();

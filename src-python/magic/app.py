@@ -13,9 +13,9 @@ app.plugins[0].json_dumps = lambda *args, **kwargs: json.dumps(
 ).encode("utf8")
 
 
-@app.post("/start")
-def start():
-    return {"success": "true"}
+@app.get("/status")
+def status():
+    return {"status": "started"}
 
 
 @app.post("/prepare")
