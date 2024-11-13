@@ -8,34 +8,42 @@ const kStatusKey = "serverStatus";
 export function useServer() {
   const [status, setStatus] = useXState<ServerStatus>(kStatusKey, "idle");
 
-  const kill = useCallback(async () => {
-    await Server.kill();
-    setStatus("idle");
-  }, []);
-
-  const launch = useCallback(async () => {
-    if (status === "launching") {
-      return;
+  const launch = async () => {
+    if (status != "idle") {
+      return true;
     }
-    const success = await Server.launch();
-    if (!success) {
-      setStatus("stopped");
+
+    setStatus("launching");
+    const launched = await Server.launch(() => {
+      setStatus("idle");
+    });
+    if (!launched) {
+      setStatus("idle");
       return false;
     }
+
     while (XSta.get(kStatusKey) === "launching") {
-      const launched = await Server.status();
-      if (launched) {
-        setStatus("started");
-        return true;
+      const status = await Server.status();
+      if (status === "running") {
+        break;
       }
-      await sleep(100);
+      await sleep(200);
     }
+
+    const prepared = await Server.prepare();
+    if (prepared) {
+      setStatus("running");
+    }
+    return prepared;
+  };
+
+  const kill = useCallback(() => {
+    setStatus("idle");
+    Server.kill();
   }, []);
 
   useEffect(() => {
-    return () => {
-      kill();
-    };
+    return () => kill();
   }, []);
 
   return { status, launch, kill };

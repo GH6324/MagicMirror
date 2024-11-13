@@ -12,17 +12,24 @@ app.plugins[0].json_dumps = lambda *args, **kwargs: json.dumps(
     *args, ensure_ascii=False, **kwargs
 ).encode("utf8")
 
+
 # Enable CORS
 @app.hook("after_request")
 def enable_cors():
     response.set_header("Access-Control-Allow-Origin", "*")
-    response.set_header("Access-Control-Allow-Methods", "GET, POST, OPTIONS")
-    response.set_header("Access-Control-Allow-Headers", "Content-Type")
+    response.set_header("Access-Control-Allow-Methods", "*")
+    response.set_header("Access-Control-Allow-Headers", "*")
+
+
+@app.route("<path:path>", method=["GET", "OPTIONS"])
+def handle_options(path):
+    response.status = 200
+    return "MagicMirror ✨"
 
 
 @app.get("/status")
 def status():
-    return {"status": "started"}
+    return {"status": "running"}
 
 
 @app.post("/prepare")

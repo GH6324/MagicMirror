@@ -6,7 +6,7 @@ const kSwapFaceRefs: {
   id: number;
   cancel?: VoidFunction;
 } = {
-  id: 0,
+  id: 1,
   cancel: undefined,
 };
 

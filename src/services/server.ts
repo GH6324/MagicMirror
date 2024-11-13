@@ -1,7 +1,7 @@
 import { Child, Command } from "@tauri-apps/plugin-shell";
 import { homeDir, join } from "@tauri-apps/api/path";
 
-export type ServerStatus = "idle" | "launching" | "started" | "stopped";
+export type ServerStatus = "idle" | "launching" | "running";
 
 export interface Task {
   id: string;
@@ -10,7 +10,7 @@ export interface Task {
 }
 
 class _Server {
-  _baseURL = "http://127.0.0.1:8023";
+  _baseURL = "http://localhost:8023";
   _childProcess?: Child;
 
   async rootDir() {
@@ -18,12 +18,16 @@ class _Server {
     return join(home, "MagicMirror");
   }
 
-  async launch(): Promise<boolean> {
+  async launch(onStop?: VoidFunction): Promise<boolean> {
     if (this._childProcess) {
       return true;
     }
     try {
-      this._childProcess = await Command.create("server").spawn();
+      const command = await Command.create("server");
+      command.addListener("close", () => {
+        onStop?.();
+      });
+      this._childProcess = await command.spawn();
       return true;
     } catch (e) {
       console.error(e);
@@ -43,15 +47,15 @@ class _Server {
     }
   }
 
-  async status(): Promise<boolean> {
+  async status(): Promise<ServerStatus> {
     try {
       const res = await fetch(`${this._baseURL}/status`, {
         method: "get",
       });
       const data = await res.json();
-      return data.status === "started";
+      return data.status || "idle";
     } catch {
-      return false;
+      return "idle";
     }
   }
 
@@ -71,6 +75,9 @@ class _Server {
     try {
       const res = await fetch(`${this._baseURL}/task`, {
         method: "post",
+        headers: {
+          "Content-Type": "application/json;charset=UTF-8",
+        },
         body: JSON.stringify(task),
       });
       const data = await res.json();
