@@ -4,12 +4,11 @@
   "version": "0.2.0",
   "type": "module",
   "scripts": {
+    "tauri": "tauri",
     "dev": "vite",
     "build": "tsc && vite build",
-    "build:server": "python -m nuitka --standalone --include-data-files=\"src-python/models/*.onnx=models/\" --output-dir=out src-python/server.py",
-    "start:server": "out/server.dist/server.bin",
     "preview": "vite preview",
-    "tauri": "tauri"
+    "build:server": "python -m nuitka --standalone --include-data-files=\"src-python/models/*.onnx=models/\" --output-dir=out src-python/server.py"
   },
   "dependencies": {
     "@tauri-apps/api": "^2",

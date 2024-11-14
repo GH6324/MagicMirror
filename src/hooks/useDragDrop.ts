@@ -1,10 +1,8 @@
 import { DragDropEvent, getCurrentWebview } from "@tauri-apps/api/webview";
-import { MutableRefObject, useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
-export function useDragDrop(
-  ref: MutableRefObject<HTMLElement | null>,
-  onDrop: (paths: string[]) => void
-) {
+export function useDragDrop(onDrop: (paths: string[]) => void) {
+  const ref = useRef<any>(null);
   const [isOverTarget, setIsOverTarget] = useState(false);
 
   const onDropped = useCallback(
@@ -58,5 +56,5 @@ export function useDragDrop(
     };
   }, []);
 
-  return { isOverTarget };
+  return { isOverTarget, ref };
 }

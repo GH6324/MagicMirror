@@ -4,6 +4,7 @@ import "./App.css";
 import { useSwapFace } from "./hooks/useSwapFace";
 import { useEffect, useState } from "react";
 import { Server } from "./services/server";
+import { ImagePreview } from "./ImagePreview";
 
 function App() {
   const { status, launch, kill } = useServer();
@@ -23,8 +24,10 @@ function App() {
   }
 
   return (
-    <main className="container">
+    <main className="page">
       <h1>MagicMirror ✨</h1>
+
+      <ImagePreview />
 
       {status === "idle" && <button onClick={launch}>Launch</button>}
       {status === "launching" && <button onClick={kill}>Launching...</button>}
