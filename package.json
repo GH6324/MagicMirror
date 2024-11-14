@@ -8,10 +8,11 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "build:server": "python -m nuitka --standalone --include-data-files=\"src-python/models/*.onnx=models/\" --output-dir=out src-python/server.py"
+    "build:server": "bash scripts/build-server.sh"
   },
   "dependencies": {
     "@tauri-apps/api": "^2",
+    "@tauri-apps/plugin-os": "^2.0.0",
     "@tauri-apps/plugin-shell": "^2.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -22,6 +23,7 @@
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
     "@vitejs/plugin-react": "^4.2.1",
+    "archiver": "^7.0.1",
     "typescript": "^5.2.2",
     "unocss": "^0.64.0",
     "vite": "^5.3.1"

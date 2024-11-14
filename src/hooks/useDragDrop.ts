@@ -36,7 +36,7 @@ export function useDragDrop(onDrop: (paths: string[]) => void) {
             return;
           }
           if (event.payload.type === "drop" && isInside) {
-            onDropped(event.payload.paths); // todo 防抖，短时间内会收到 2 次事件
+            onDropped(event.payload.paths);
           }
           setIsOverTarget(false);
         }

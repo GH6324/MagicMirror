@@ -5,6 +5,7 @@ import { useSwapFace } from "./hooks/useSwapFace";
 import { useEffect, useState } from "react";
 import { Server } from "./services/server";
 import { ImagePreview } from "./ImagePreview";
+import { useOS } from "./hooks/useOS";
 
 function App() {
   const { status, launch, kill } = useServer();
@@ -23,6 +24,8 @@ function App() {
     );
   }
 
+  const { os, arch } = useOS();
+
   return (
     <main className="page">
       <h1>MagicMirror ✨</h1>
@@ -35,6 +38,8 @@ function App() {
 
       {status === "launching" && <p>首次加载比较缓慢，请耐心等待...</p>}
 
+      <p>os:{os}</p>
+      <p>arch:{arch}</p>
       <p>rootDir:{rootDir}</p>
       <p>status:{status}</p>
       <p>isSwapping:{`${isSwapping}`}</p>
