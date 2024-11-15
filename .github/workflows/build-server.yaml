@@ -17,10 +17,10 @@ jobs:
           echo "version=$VERSION" >> $GITHUB_OUTPUT
           mkdir -p src-python/models && cd src-python/models
           BASE_URL="https://github.com/idootop/TinyFace/releases/download/models-1.0.0"
-          curl -# -O "${BASE_URL}/arcface_w600k_r50.onnx"
-          curl -# -O "${BASE_URL}/gfpgan_1.4.onnx"
-          curl -# -O "${BASE_URL}/inswapper_128_fp16.onnx"
-          curl -# -O "${BASE_URL}/scrfd_2.5g.onnx"
+          curl -# -O -L "${BASE_URL}/arcface_w600k_r50.onnx"
+          curl -# -O -L "${BASE_URL}/gfpgan_1.4.onnx"
+          curl -# -O -L "${BASE_URL}/inswapper_128_fp16.onnx"
+          curl -# -O -L "${BASE_URL}/scrfd_2.5g.onnx"
           cd ${{ github.workspace }}
       - name: Upload models
         uses: actions/upload-artifact@v4
