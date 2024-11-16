@@ -1,4 +1,4 @@
-import { type, arch } from "@tauri-apps/plugin-os";
+import { arch, type } from "@tauri-apps/plugin-os";
 
 export function useOS() {
   return {

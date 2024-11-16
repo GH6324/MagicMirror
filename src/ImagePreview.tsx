@@ -1,6 +1,6 @@
+import { convertFileSrc } from "@tauri-apps/api/core";
 import { useState } from "react";
 import { useDragDrop } from "./hooks/useDragDrop";
-import { convertFileSrc } from "@tauri-apps/api/core";
 
 export function ImagePreview() {
   const [src, setSrc] = useState("");

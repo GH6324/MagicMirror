@@ -1,12 +1,12 @@
 import { useServer } from "./hooks/useServer";
 
-import "./App.css";
-import { useSwapFace } from "./hooks/useSwapFace";
 import { useEffect, useState } from "react";
-import { Server } from "./services/server";
+import "./App.css";
 import { ImagePreview } from "./ImagePreview";
-import { useOS } from "./hooks/useOS";
 import { useDownload } from "./hooks/useDownload";
+import { useOS } from "./hooks/useOS";
+import { useSwapFace } from "./hooks/useSwapFace";
+import { Server } from "./services/server";
 
 function App() {
   const { status, launch, kill } = useServer();

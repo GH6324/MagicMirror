@@ -1,7 +1,7 @@
-import { Child, Command } from "@tauri-apps/plugin-shell";
-import { homeDir, join } from "@tauri-apps/api/path";
-import { type } from "@tauri-apps/plugin-os";
 import { invoke } from "@tauri-apps/api/core";
+import { homeDir, join } from "@tauri-apps/api/path";
+import { arch, type } from "@tauri-apps/plugin-os";
+import { Child, Command } from "@tauri-apps/plugin-shell";
 
 export type ServerStatus = "idle" | "launching" | "running";
 
@@ -12,29 +12,42 @@ export interface Task {
 }
 
 class _Server {
-  _baseURL = "http://localhost:8023";
   _childProcess?: Child;
+  _baseURL = "http://localhost:8023";
+  _downloadURL =
+    "https://github.com/idootop/MagicMirror/releases/download/server-v1.0.0/server_{type}_{arch}.zip";
 
   async rootDir() {
-    const home = await homeDir();
-    return join(home, "MagicMirror");
-  }
-
-  async entryPath() {
-    return join(
-      await this.rootDir(),
-      type() === "windows" ? "server.exe" : "server.bin"
-    );
+    return join(await homeDir(), "MagicMirror");
   }
 
   async isDownloaded() {
     try {
       return invoke<boolean>("file_exists", {
-        path: await this.entryPath(),
+        path: await join(
+          await this.rootDir(),
+          type() === "windows" ? "server.exe" : "server.bin"
+        ),
       });
     } catch (error) {
       return false;
     }
+  }
+
+  async download() {
+    if (await this.isDownloaded()) {
+      return true;
+    }
+    await invoke("download_and_unzip", {
+      url: this._downloadURL
+        .replace("{type}", type())
+        .replace("{arch}", arch()),
+      targetDir: await this.rootDir(),
+    });
+    if (!(await this.isDownloaded())) {
+      throw Error("Unknown error");
+    }
+    return true;
   }
 
   async launch(onStop?: VoidFunction): Promise<boolean> {
@@ -43,13 +56,10 @@ class _Server {
     }
     try {
       const command = await Command.create(`server-${type()}`);
-      command.addListener("close", () => {
-        onStop?.();
-      });
+      command.addListener("close", () => onStop?.());
       this._childProcess = await command.spawn();
       return true;
-    } catch (e) {
-      console.error(e);
+    } catch {
       return false;
     }
   }

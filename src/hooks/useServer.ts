@@ -1,6 +1,6 @@
 import { useCallback, useEffect } from "react";
-import { Server, ServerStatus } from "../services/server";
 import { useXState, XSta } from "xsta";
+import { Server, ServerStatus } from "../services/server";
 import { sleep } from "../services/utils";
 
 const kStatusKey = "serverStatus";

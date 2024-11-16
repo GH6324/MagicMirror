@@ -1,8 +1,7 @@
-import { invoke } from "@tauri-apps/api/core";
 import { listen } from "@tauri-apps/api/event";
 import { useCallback, useEffect } from "react";
-import { Server } from "../services/server";
 import { createXStaManager } from "xsta";
+import { Server } from "../services/server";
 
 type DownloadStatus =
   | "idle"
@@ -76,42 +75,34 @@ export function useDownload() {
     };
   }, []);
 
-  const download = useCallback(
-    async (
-      url = "https://github.com/idootop/MagicMirror/actions/runs/11866704019/artifacts/2195913226"
-    ) => {
-      try {
-        const states = kDownloadStates.getState();
-        if (["downloading", "unzipping"].includes(states.status)) {
-          return false;
-        }
-        if (states.status === "success") {
-          return true;
-        }
-        setStates((states) => {
-          states.progress = 0;
-          states.status = "downloading";
-        });
-        await invoke("download_and_unzip", {
-          url,
-          targetDir: await Server.rootDir(),
-        });
-        setStates((states) => {
-          states.progress = 100;
-          states.status = "success";
-        });
-        return true;
-      } catch (error) {
-        setStates((states) => {
-          states.error = error;
-          states.progress = 0;
-          states.status = "failed";
-        });
+  const download = useCallback(async () => {
+    try {
+      const states = kDownloadStates.getState();
+      if (["downloading", "unzipping"].includes(states.status)) {
         return false;
       }
-    },
-    []
-  );
+      if (states.status === "success") {
+        return true;
+      }
+      setStates((states) => {
+        states.progress = 0;
+        states.status = "downloading";
+      });
+      await Server.download();
+      setStates((states) => {
+        states.progress = 100;
+        states.status = "success";
+      });
+      return true;
+    } catch (error) {
+      setStates((states) => {
+        states.error = error;
+        states.progress = 0;
+        states.status = "failed";
+      });
+      return false;
+    }
+  }, []);
 
   return { download, ...states };
 }

@@ -1,6 +1,6 @@
 import { useCallback, useEffect } from "react";
-import { Server } from "../services/server";
 import { useXState } from "xsta";
+import { Server } from "../services/server";
 
 const kSwapFaceRefs: {
   id: number;
