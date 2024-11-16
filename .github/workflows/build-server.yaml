@@ -125,7 +125,6 @@ jobs:
         shell: pwsh
         run: |
           python -m nuitka --standalone --assume-yes-for-downloads `
-            --lto=no --enable-plugin=anti-bloat `
             --mingw64 --windows-console-mode=disable `
             --include-data-files="src-python/models/*.onnx=models/" `
             --output-dir=out src-python/server.py
@@ -158,10 +157,8 @@ jobs:
           allowUpdates: true
           token: ${{ secrets.GITHUB_TOKEN }}
           name: Server v${{ needs.models.outputs.version }}
-          tag: v${{ needs.models.outputs.version }}
+          tag: server-v${{ needs.models.outputs.version }}
           body: MagicMirror Server v${{ needs.models.outputs.version }}
           draft: true
           prerelease: false
-          makeLatest: latest
-          removeArtifacts: true
           artifacts: dist/*
