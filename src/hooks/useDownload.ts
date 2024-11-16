@@ -24,7 +24,16 @@ export function useDownload() {
   const [states, setStates] = kDownloadStates.useState();
 
   useEffect(() => {
-    const setupListeners = async () => {
+    const setup = async () => {
+      const isDownloaded = await Server.isDownloaded();
+      if (isDownloaded) {
+        setStates((states) => {
+          states.progress = 100;
+          states.status = "success";
+        });
+        return;
+      }
+
       const download = await listen("download-progress", (event) => {
         const progress = event.payload;
         const states = kDownloadStates.getState();
@@ -55,10 +64,10 @@ export function useDownload() {
 
     let cleanup: (() => void) | undefined;
 
-    setupListeners().then((unlisten) => {
+    setup().then((unlisten) => {
       cleanup = () => {
-        unlisten.download();
-        unlisten.unzip();
+        unlisten?.download();
+        unlisten?.unzip();
       };
     });
 
@@ -69,12 +78,15 @@ export function useDownload() {
 
   const download = useCallback(
     async (
-      url = "https://github.com/idootop/feiyu-player/releases/download/updater/feiyu_2.0.0_windows_x86_64.nsis.zip"
+      url = "https://github.com/idootop/MagicMirror/actions/runs/11866704019/artifacts/2195913226"
     ) => {
       try {
         const states = kDownloadStates.getState();
         if (["downloading", "unzipping"].includes(states.status)) {
           return false;
+        }
+        if (states.status === "success") {
+          return true;
         }
         setStates((states) => {
           states.progress = 0;
@@ -100,5 +112,6 @@ export function useDownload() {
     },
     []
   );
+
   return { download, ...states };
 }

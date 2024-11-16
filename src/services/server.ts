@@ -1,5 +1,7 @@
 import { Child, Command } from "@tauri-apps/plugin-shell";
 import { homeDir, join } from "@tauri-apps/api/path";
+import { type } from "@tauri-apps/plugin-os";
+import { invoke } from "@tauri-apps/api/core";
 
 export type ServerStatus = "idle" | "launching" | "running";
 
@@ -18,12 +20,29 @@ class _Server {
     return join(home, "MagicMirror");
   }
 
+  async entryPath() {
+    return join(
+      await this.rootDir(),
+      type() === "windows" ? "server.exe" : "server.bin"
+    );
+  }
+
+  async isDownloaded() {
+    try {
+      return invoke<boolean>("file_exists", {
+        path: await this.entryPath(),
+      });
+    } catch (error) {
+      return false;
+    }
+  }
+
   async launch(onStop?: VoidFunction): Promise<boolean> {
     if (this._childProcess) {
       return true;
     }
     try {
-      const command = await Command.create("server");
+      const command = await Command.create(`server-${type()}`);
       command.addListener("close", () => {
         onStop?.();
       });

@@ -43,9 +43,10 @@ function App() {
 
       <button onClick={() => download()}>下载测试</button>
 
+      <p>isDownloaded:{`${downloadStatus === "success"}`}</p>
       <p>downloadStatus:{downloadStatus}</p>
       <p>progress:{progress.toFixed(2)}</p>
-      <p>error:{error}</p>
+      <p>error:{`${error}`}</p>
 
       <p>os:{os}</p>
       <p>arch:{arch}</p>

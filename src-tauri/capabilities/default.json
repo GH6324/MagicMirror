@@ -12,8 +12,13 @@
       "identifier": "shell:allow-spawn",
       "allow": [
         {
-          "name": "server",
+          "name": "server-macos",
           "cmd": "$HOME/MagicMirror/server.bin",
+          "args": true
+        },
+        {
+          "name": "server-windows",
+          "cmd": "$HOME/MagicMirror/server.exe",
           "args": true
         }
       ]
