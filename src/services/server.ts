@@ -37,7 +37,7 @@ class _Server {
         ]).execute();
         return output.code === 0;
       }
-      return true;
+      return exists;
     } catch (error) {
       return false;
     }

@@ -10,7 +10,7 @@ import { Server } from "./services/server";
 
 function App() {
   const { status, launch, kill } = useServer();
-  const { isSwapping, output, swapFace } = useSwapFace();
+  const { isSwapping, output, swapFace, cancel } = useSwapFace();
 
   const [rootDir, setRootDir] = useState("");
 
@@ -38,8 +38,9 @@ function App() {
       {status === "idle" && <button onClick={launch}>Launch</button>}
       {status === "launching" && <button onClick={kill}>Launching...</button>}
       {status === "running" && <button onClick={startSwap}>Swap</button>}
+      {isSwapping && <button onClick={cancel}>Swapping...</button>}
 
-      {status === "launching" && <p>首次加载比较缓慢，请耐心等待...</p>}
+      {status === "launching" && <p>首次加载较慢，请耐心等待...</p>}
 
       <button onClick={() => download()}>下载测试</button>
 
