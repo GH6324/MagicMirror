@@ -74,14 +74,13 @@ jobs:
           python -m nuitka --standalone --assume-yes-for-downloads \
             --include-data-files="src-python/models/*.onnx=models/" \
             --output-dir=out src-python/server.py
-          cd out/server.dist && zip -r ../server.zip .
+          cd out/server.dist && zip -r ../server_${{ matrix.build }}_${{ matrix.arch }}.zip .
           cd ${{ github.workspace }}
       - name: Upload Server
         uses: actions/upload-artifact@v4
         with:
           name: server_${{ matrix.build }}_${{ matrix.arch }}
-          path: |
-            out/server.zip
+          path: out/*.zip
 
   build-for-windows:
     name: Windows
@@ -129,14 +128,13 @@ jobs:
             --include-data-files="src-python/models/*.onnx=models/" `
             --output-dir=out src-python/server.py
           cd out/server.dist
-          Compress-Archive -Path * -DestinationPath "../server.zip"
+          Compress-Archive -Path * -DestinationPath "../server_${{ matrix.build }}_${{ matrix.arch }}.zip"
           cd ${{ github.workspace }}
       - name: Upload Server
         uses: actions/upload-artifact@v4
         with:
           name: server_${{ matrix.build }}_${{ matrix.arch }}
-          path: |
-            out/server.zip
+          path: out/*.zip
 
   release:
     name: Release
@@ -161,4 +159,5 @@ jobs:
           body: MagicMirror Server v${{ needs.models.outputs.version }}
           draft: true
           prerelease: false
-          artifacts: dist/*
+          removeArtifacts: true
+          artifacts: dist/*.zip
