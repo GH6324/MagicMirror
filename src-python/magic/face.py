@@ -2,6 +2,7 @@ import os
 from functools import lru_cache
 
 import cv2
+import numpy as np
 from tinyface import TinyFace
 
 _tf = TinyFace()
@@ -24,7 +25,7 @@ def swap_face(input_path, face_path):
     try:
         save_path = _get_output_file_path(input_path)
         output_img = _swap_face(input_path, face_path)
-        cv2.imwrite(save_path, output_img)
+        _write_image(save_path, output_img)
         return save_path
     except BaseException as _:
         return None
@@ -47,7 +48,12 @@ def _get_one_face(face_path: str):
 
 @lru_cache(maxsize=12)
 def _read_image(img_path: str):
-    return cv2.imread(img_path)
+    return cv2.imdecode(np.fromfile(img_path, dtype=np.uint8), -1)
+
+
+def _write_image(img_path: str, img):
+    suffix = os.path.splitext(img_path)[-1]
+    cv2.imencode(suffix, img)[1].tofile(img_path)
 
 
 def _get_output_file_path(file_name):
