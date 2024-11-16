@@ -1,6 +1,6 @@
-# Magic Mirror (魔镜换颜)
+# Magic Mirror
 
-> AI 一键换脸、发型、穿搭，遇见更好的自己 ✨
+> 发现更美的自己 ✨ AI 一键换脸、发型、穿搭
 
 ## Credits
 
