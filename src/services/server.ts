@@ -23,12 +23,21 @@ class _Server {
 
   async isDownloaded() {
     try {
-      return invoke<boolean>("file_exists", {
-        path: await join(
-          await this.rootDir(),
-          type() === "windows" ? "server.exe" : "server.bin"
-        ),
+      const binaryPath = await join(
+        await this.rootDir(),
+        type() === "windows" ? "server.exe" : "server.bin"
+      );
+      const exists = await invoke<boolean>("file_exists", {
+        path: binaryPath,
       });
+      if (exists && type() === "macos") {
+        const output = await Command.create("chmod", [
+          "755",
+          binaryPath,
+        ]).execute();
+        return output.code === 0;
+      }
+      return true;
     } catch (error) {
       return false;
     }
@@ -55,7 +64,7 @@ class _Server {
       return true;
     }
     try {
-      const command = await Command.create(`server-${type()}`);
+      const command = Command.create(`server-${type()}`);
       command.addListener("close", () => onStop?.());
       this._childProcess = await command.spawn();
       return true;

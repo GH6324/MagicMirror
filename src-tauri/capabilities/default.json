@@ -9,6 +9,16 @@
     "shell:allow-spawn",
     "shell:default",
     {
+      "identifier": "shell:allow-execute",
+      "allow": [
+        {
+          "name": "chmod",
+          "cmd": "chmod",
+          "args": true
+        }
+      ]
+    },
+    {
       "identifier": "shell:allow-spawn",
       "allow": [
         {
