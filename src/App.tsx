@@ -37,7 +37,9 @@ function App() {
 
       {status === "idle" && <button onClick={launch}>Launch</button>}
       {status === "launching" && <button onClick={kill}>Launching...</button>}
-      {status === "running" && <button onClick={startSwap}>Swap</button>}
+      {status === "running" && !isSwapping && (
+        <button onClick={startSwap}>Swap</button>
+      )}
       {isSwapping && <button onClick={cancel}>Swapping...</button>}
 
       {status === "launching" && <p>首次加载较慢，请耐心等待...</p>}

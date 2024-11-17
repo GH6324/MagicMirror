@@ -10,7 +10,7 @@ export function ImagePreview() {
 
   return (
     <div ref={ref} className="w-200px h-200px bg-pink">
-      <img src={src} className="w-full h-full object-cover" />
+      {src && <img src={src} className="w-full h-full object-cover" />}
     </div>
   );
 }
