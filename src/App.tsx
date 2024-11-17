@@ -1,18 +1,22 @@
-import { useServer } from "./hooks/useServer";
-
+import { ImagePreview } from "@/components/ImagePreview";
+import { useDownload } from "@/hooks/useDownload";
+import { useOS } from "@/hooks/useOS";
+import { useServer } from "@/hooks/useServer";
+import { useSwapFace } from "@/hooks/useSwapFace";
+import { Server } from "@/services/server";
 import { useEffect, useState } from "react";
+
 import "./App.css";
-import { ImagePreview } from "./ImagePreview";
-import { useDownload } from "./hooks/useDownload";
-import { useOS } from "./hooks/useOS";
-import { useSwapFace } from "./hooks/useSwapFace";
-import { Server } from "./services/server";
+import { LanguageSwitcher } from "./components/LanguageSwitcher";
+import { useTranslation } from "react-i18next";
 
 function App() {
   const { status, launch, kill } = useServer();
   const { isSwapping, output, swapFace, cancel } = useSwapFace();
 
   const [rootDir, setRootDir] = useState("");
+
+  const { t } = useTranslation();
 
   useEffect(() => {
     Server.rootDir().then((e) => setRootDir(e));
@@ -32,6 +36,11 @@ function App() {
   return (
     <main className="page">
       <h1>MagicMirror ✨</h1>
+
+      <LanguageSwitcher />
+
+      <p>{t("welcome")}</p>
+      <p>{t("greeting", { name: "Del Wang" })}</p>
 
       <ImagePreview />
 
