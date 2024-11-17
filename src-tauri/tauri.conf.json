@@ -13,8 +13,11 @@
     "windows": [
       {
         "title": "MagicMirror",
-        "width": 800,
-        "height": 600
+        "width": 256,
+        "height": 120,
+        "center": true,
+        "transparent": true,
+        "decorations": false
       }
     ],
     "security": {
