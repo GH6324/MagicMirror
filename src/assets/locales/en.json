@@ -3,5 +3,7 @@
   "Extracting resources, please wait": "Extracting resources, please wait ({{progress}}%)...",
   "*If the download is stuck or fails, please download and initialize manually. ": "*If the download is stuck or fails, please download and initialize manually. ",
   "View tutorial": "View tutorial",
-  "Starting... First load may take longer, please be patient.": "Starting... First load may take longer, please be patient."
+  "Starting... First load may take longer, please be patient.": "Starting... First load may take longer, please be patient.",
+  "downloadURL": "https://github.com/idootop/MagicMirror/releases/download/server-v1.0.0/server_{{type}}_{{arch}}.zip",
+  "downloadTutorial": "https://github.com/idootop/MagicMirror"
 }

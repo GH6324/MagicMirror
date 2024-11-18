@@ -2,6 +2,7 @@ import banner from "@/assets/images/magic-mirror.svg";
 import { ProgressBar } from "@/components/ProgressBar";
 import { useDownload } from "@/hooks/useDownload";
 import { useServer } from "@/hooks/useServer";
+import { open } from "@tauri-apps/plugin-shell";
 import { useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 
@@ -55,7 +56,12 @@ export function LaunchPage() {
         {t(
           "*If the download is stuck or fails, please download and initialize manually. "
         )}
-        <span className="c-blue cursor-pointer">{t("View tutorial")}</span>
+        <span
+          className="c-blue cursor-pointer"
+          onClick={() => open(t("downloadTutorial"))}
+        >
+          {t("View tutorial")}
+        </span>
       </p>
     </>
   ) : null;

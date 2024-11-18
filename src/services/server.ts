@@ -2,6 +2,7 @@ import { invoke } from "@tauri-apps/api/core";
 import { homeDir, join } from "@tauri-apps/api/path";
 import { arch, type } from "@tauri-apps/plugin-os";
 import { Child, Command } from "@tauri-apps/plugin-shell";
+import { t } from "i18next";
 
 export type ServerStatus = "idle" | "launching" | "running";
 
@@ -14,8 +15,6 @@ export interface Task {
 class _Server {
   _childProcess?: Child;
   _baseURL = "http://localhost:8023";
-  _downloadURL =
-    "https://github.com/idootop/MagicMirror/releases/download/server-v1.0.0/server_{type}_{arch}.zip";
 
   async rootDir() {
     return join(await homeDir(), "MagicMirror");
@@ -48,9 +47,7 @@ class _Server {
       return true;
     }
     await invoke("download_and_unzip", {
-      url: this._downloadURL
-        .replace("{type}", type())
-        .replace("{arch}", arch()),
+      url: t("downloadURL", { type: type(), arch: arch() }),
       targetDir: await this.rootDir(),
     });
     if (!(await this.isDownloaded())) {
