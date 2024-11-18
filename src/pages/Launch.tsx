@@ -2,7 +2,7 @@ import banner from "@/assets/images/magic-mirror.svg";
 import { ProgressBar } from "@/components/ProgressBar";
 import { useDownload } from "@/hooks/useDownload";
 import { useServer } from "@/hooks/useServer";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 
 export function LaunchPage() {
@@ -10,19 +10,34 @@ export function LaunchPage() {
   const { progress, download, status: downloadStatus } = useDownload();
   const { launch, status: launchingStatus } = useServer();
 
+  const launchingStatusRef = useRef(launchingStatus);
+  launchingStatusRef.current = launchingStatus;
+
   useEffect(() => {
     download();
   }, []);
 
   useEffect(() => {
-    if (downloadStatus === "success" && launchingStatus === "idle") {
+    if (downloadStatus === "success") {
       launch();
+      Promise.all([
+        new Promise((resolve) => {
+          setTimeout(resolve, 3000);
+        }),
+        new Promise((resolve) => {
+          const checkInterval = setInterval(() => {
+            if (launchingStatusRef.current === "running") {
+              clearInterval(checkInterval);
+              resolve(true);
+            }
+          }, 100);
+        }),
+      ]).then(() => {
+        // todo jump to home page
+        console.log(">>> Launched");
+      });
     }
-    if (launchingStatus === "running") {
-      // todo jump to home page
-      console.log(">>> Launched");
-    }
-  }, [downloadStatus, launchingStatus]);
+  }, [downloadStatus]);
 
   const launching = ["launching", "running"].includes(launchingStatus) ? (
     <>
