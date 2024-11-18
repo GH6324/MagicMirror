@@ -5,6 +5,7 @@ import { useServer } from "@/hooks/useServer";
 import { open } from "@tauri-apps/plugin-shell";
 import { useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 
 export function LaunchPage() {
   const { t } = useTranslation();
@@ -13,6 +14,8 @@ export function LaunchPage() {
 
   const launchingStatusRef = useRef(launchingStatus);
   launchingStatusRef.current = launchingStatus;
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     download();
@@ -34,8 +37,7 @@ export function LaunchPage() {
           }, 100);
         }),
       ]).then(() => {
-        // todo jump to home page
-        console.log(">>> Launched");
+        navigate('/mirror');
       });
     }
   }, [downloadStatus]);
