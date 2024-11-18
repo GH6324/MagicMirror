@@ -2,6 +2,14 @@ import { defineConfig, presetAttributify, presetUno } from "unocss";
 
 export default defineConfig({
   presets: [presetUno(), presetAttributify()],
+  theme: {
+    colors: {
+      red: "var(--color-red)",
+      blue: "var(--color-blue)",
+      green: "var(--color-green)",
+      yellow: "var(--color-yellow)",
+    },
+  },
   shortcuts: [
     ["flex-c", "flex items-center"],
     ["flex-c-c", "flex items-center justify-center "],

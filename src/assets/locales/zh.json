@@ -1,4 +1,7 @@
 {
-  "welcome": "👋 欢迎",
-  "greeting": "你好，{{name}}！"
+  "Downloading resources, please wait": "正在下载资源文件，请耐心等待({{progress}}%)...",
+  "Extracting resources, please wait": "正在解压资源文件，请耐心等待({{progress}}%)...",
+  "*If the download is stuck or fails, please download and initialize manually. ": "*如果下载进度卡住或失败，请手动下载并初始化。",
+  "View tutorial": "查看教程",
+  "Starting... First load may take longer, please be patient.": "启动中... 首次加载较慢，请耐心等待～"
 }

@@ -15,8 +15,8 @@
     "windows": [
       {
         "title": "MagicMirror",
-        "width": 256,
-        "height": 120,
+        "width": 540,
+        "height": 320,
         "center": true,
         "transparent": true,
         "decorations": false

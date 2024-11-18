@@ -1,4 +1,7 @@
 {
-  "welcome": "👋 Welcome",
-  "greeting": "Hello, {{name}}!"
+  "Downloading resources, please wait": "Downloading resources, please wait ({{progress}}%)...",
+  "Extracting resources, please wait": "Extracting resources, please wait ({{progress}}%)...",
+  "*If the download is stuck or fails, please download and initialize manually. ": "*If the download is stuck or fails, please download and initialize manually. ",
+  "View tutorial": "View tutorial",
+  "Starting... First load may take longer, please be patient.": "Starting... First load may take longer, please be patient."
 }

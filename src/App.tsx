@@ -1,9 +1,7 @@
-import "./App.css";
-
-import { MirrorPage } from "./pages/Mirror";
+import { LaunchPage } from "./pages/Launch";
 
 function App() {
-  return <MirrorPage />;
+  return <LaunchPage />;
 }
 
 export default App;
