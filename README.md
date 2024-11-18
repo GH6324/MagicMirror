@@ -2,6 +2,8 @@
 
 > 发现更美的自己 ✨ AI 一键换脸、发型、穿搭
 
+![](src/assets/images/magic-mirror.svg)
+
 ## Credits
 
 - [FaceFusion](https://github.com/facefusion/facefusion): Industry leading face manipulation platform
