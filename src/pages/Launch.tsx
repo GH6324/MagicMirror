@@ -37,7 +37,7 @@ export function LaunchPage() {
           }, 100);
         }),
       ]).then(() => {
-        navigate('/mirror');
+        navigate("/mirror");
       });
     }
   }, [downloadStatus]);
@@ -71,7 +71,12 @@ export function LaunchPage() {
   return (
     <div
       data-tauri-drag-region
-      className="w-100vw h-100vh bg-black color-white flex-col-c-c gap-8px p-10px"
+      style={{
+        border: "1px solid rgba(0, 0, 0, 0.1)",
+        boxShadow:
+          "0 4px 10px rgba(0, 0, 0, 0.3), 0 8px 20px rgba(0, 0, 0, 0.3)",
+      }}
+      className="w-540px h-320px bg-#151515 color-white flex-col-c-c gap-8px p-10px"
     >
       <img
         src={banner}

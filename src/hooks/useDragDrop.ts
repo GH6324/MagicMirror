@@ -1,12 +1,10 @@
 import { DragDropEvent, getCurrentWebview } from "@tauri-apps/api/webview";
+import { getCurrentWindow } from "@tauri-apps/api/window";
 import { useCallback, useEffect, useRef, useState } from "react";
-import { useOS } from "./useOS";
 
 export function useDragDrop(onDrop: (paths: string[]) => void) {
   const ref = useRef<any>(null);
   const [isOverTarget, setIsOverTarget] = useState(false);
-
-  const { isWindows } = useOS();
 
   const onDropped = useCallback(
     (paths: string[]) => {
@@ -16,20 +14,13 @@ export function useDragDrop(onDrop: (paths: string[]) => void) {
   );
 
   useEffect(() => {
-    const withDPR = (p: { x: number; y: number }) => {
-      const dpr = isWindows ? window.devicePixelRatio : 1;
-      return {
-        x: p.x / dpr,
-        y: p.y / dpr,
-      };
-    };
-
     const checkIsInside = async (event: DragDropEvent) => {
       const targetRect = ref.current?.getBoundingClientRect();
       if (!targetRect || event.type === "leave") {
         return false;
       }
-      const position = withDPR(event.position);
+      const factor = await getCurrentWindow().scaleFactor();
+      const position = event.position.toLogical(factor);
       const isInside =
         position.x >= targetRect.left &&
         position.x <= targetRect.right &&
