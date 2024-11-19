@@ -2,14 +2,25 @@ import { DragDropEvent, getCurrentWebview } from "@tauri-apps/api/webview";
 import { getCurrentWindow } from "@tauri-apps/api/window";
 import { useCallback, useEffect, useRef, useState } from "react";
 
+function debounce(func: any, delay = 100) {
+  let timeoutId: any;
+  return function (...args: any) {
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => {
+      //@ts-ignore
+      func.apply(this, args);
+    }, delay);
+  };
+}
+
 export function useDragDrop(onDrop: (paths: string[]) => void) {
   const ref = useRef<any>(null);
   const [isOverTarget, setIsOverTarget] = useState(false);
 
   const onDropped = useCallback(
-    (paths: string[]) => {
+    debounce((paths: string[]) => {
       onDrop(paths);
-    },
+    }),
     [onDrop]
   );
 

@@ -44,7 +44,7 @@ export function LaunchPage() {
 
   const launching = ["launching", "running"].includes(launchingStatus) ? (
     <>
-      <p>{t("Starting... First load may take longer, please be patient.")}</p>
+      <p>{t("Starting... First load may take longer, please wait.")}</p>
     </>
   ) : null;
 
