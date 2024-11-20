@@ -1,4 +1,4 @@
-name: Build and Release MagicMirror
+name: Release MagicMirror
 on:
   workflow_dispatch:
 
