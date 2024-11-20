@@ -2,6 +2,7 @@ import { useDragDrop } from "@/hooks/useDragDrop";
 import { useSwapFace } from "@/hooks/useSwapFace";
 import { convertFileSrc } from "@tauri-apps/api/core";
 import { exit } from "@tauri-apps/plugin-process";
+import { open } from "@tauri-apps/plugin-shell";
 import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 
@@ -11,8 +12,6 @@ import iconMenu from "@/assets/images/menu.webp";
 import background from "@/assets/images/mirror-bg.svg";
 import mirrorInput from "@/assets/images/mirror-input.webp";
 import mirrorMe from "@/assets/images/mirror-me.webp";
-import { open } from "@tauri-apps/plugin-shell";
-import { getCurrentWindow } from "@tauri-apps/api/window";
 
 interface Asset {
   path: string;
@@ -127,9 +126,7 @@ export function MirrorPage() {
                   </div>
                 )}
                 <div onClick={() => open(t("aboutLink"))}>{t("About")}</div>
-                <div onClick={() => getCurrentWindow().close()}>
-                  {t("Quit")}
-                </div>
+                <div onClick={() => exit(0)}>{t("Quit")}</div>
               </div>
             </div>
           </div>
