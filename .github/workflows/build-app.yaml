@@ -51,7 +51,7 @@ jobs:
           pnpm install
           VERSION=$(node -p "require('./package.json').version")
           CI=false pnpm tauri build -c "{\"version\":\"$VERSION\"}" -t ${{ matrix.target }}
-          APP_NAME=MagicMirror_$VERSION_${{ matrix.build }}_${{ matrix.arch }}
+          APP_NAME="MagicMirror_${VERSION}_${{ matrix.build }}_${{ matrix.arch }}"
           node scripts/dist.js ${{ matrix.target }} $APP_NAME
       - name: Upload App
         uses: actions/upload-artifact@v4
