@@ -1,8 +1,16 @@
 {
   "name": "magic",
   "private": true,
-  "version": "0.4.0",
+  "version": "1.0.0",
   "type": "module",
+  "description": "Instant AI face swap, hairstyles & outfits—One click to a brand new you!",
+  "author": {
+    "name": "Del Wang",
+    "email": "hello@xbox.work"
+  },
+  "license": "MIT",
+  "homepage": "https://del.wang",
+  "repository": "https://github.com/idootop/MagicMirror",
   "scripts": {
     "tauri": "tauri",
     "dev": "vite",

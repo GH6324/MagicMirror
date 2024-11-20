@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "magic"
 version = "1.0.0"
-description = "发现更美的自己 ✨ AI 一键换脸、发型、穿搭"
+description = "Instant AI face swap, hairstyles & outfits—One click to a brand new you!"
 authors = ["Del Wang <hello@xbox.work>"]
 
 

@@ -1,6 +1,6 @@
-# Magic Mirror
+# MagicMirror
 
-> 发现更美的自己 ✨ AI 一键换脸、发型、穿搭
+> Instant AI face swap, hairstyles & outfits—One click to a brand new you!
 
 ![](src/assets/images/magic-mirror.svg)
 
