@@ -99,6 +99,7 @@ jobs:
         with:
           workspaces: "src-tauri/${{ matrix.target }} -> target"
       - name: Build APP
+        shell: pwsh
         run: |
           pnpm install
           $VERSION = $(node -p "require('./package.json').version")
