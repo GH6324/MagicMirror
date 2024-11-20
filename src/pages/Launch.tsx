@@ -80,7 +80,7 @@ export function LaunchPage() {
     >
       <img
         src={banner}
-        className="w-80% object-cover cursor-default pointer-events-none"
+        className="w-80% object-cover cursor-default pointer-events-none select-none"
       />
       {launching}
       {downloading}

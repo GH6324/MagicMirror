@@ -9,6 +9,11 @@
   "Then, drag the photo you want to swap faces with into the mirror.": "Now, drag the photo you want to swap faces with into the mirror.",
   "Face swap successful! Image saved locally.": "Face swap successful! Image saved locally.",
   "Face swap failed. Try a different image.": "Face swap failed. Try a different image.",
+  "Exit": "Exit",
+  "Language": "Language",
+  "Switch": "Switch",
+  "About": "About",
   "downloadURL": "https://github.com/idootop/MagicMirror/releases/download/server-v1.0.0/server_{{type}}_{{arch}}.zip",
-  "downloadTutorial": "https://github.com/idootop/MagicMirror"
+  "downloadTutorial": "https://github.com/idootop/MagicMirror",
+  "aboutLink": "https://github.com/idootop/MagicMirror"
 }

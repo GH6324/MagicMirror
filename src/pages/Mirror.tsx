@@ -1,14 +1,17 @@
 import { useDragDrop } from "@/hooks/useDragDrop";
+import { useSwapFace } from "@/hooks/useSwapFace";
 import { convertFileSrc } from "@tauri-apps/api/core";
+import { exit } from "@tauri-apps/plugin-process";
 import { useEffect, useRef, useState } from "react";
+import { useTranslation } from "react-i18next";
 
-import styles from "@/styles/mirror.module.css";
+import "@/styles/mirror.css";
 
+import iconMenu from "@/assets/images/menu.webp";
 import background from "@/assets/images/mirror-bg.webp";
 import mirrorInput from "@/assets/images/mirror-input.webp";
 import mirrorMe from "@/assets/images/mirror-me.webp";
-import { useSwapFace } from "@/hooks/useSwapFace";
-import { t } from "i18next";
+import { open } from "@tauri-apps/plugin-shell";
 
 interface Asset {
   path: string;
@@ -26,6 +29,8 @@ export function MirrorPage() {
   const [flag, setFlag] = useState(false);
   const rebuild = useRef<any>();
   rebuild.current = () => setFlag(!flag);
+
+  const { i18n, t } = useTranslation();
 
   const { isSwapping, swapFace } = useSwapFace();
   const [success, setSuccess] = useState(true);
@@ -90,17 +95,37 @@ export function MirrorPage() {
 
   return (
     <div className="w-100vw h-100vh p-40px">
-      <div
-        ref={ref}
-        data-tauri-drag-region
-        className="relative w-full h-full"
-        onClick={() => {
-          kMirrorStates.isMe = !kMirrorStates.isMe;
-          rebuild.current();
-        }}
-      >
+      <div ref={ref} data-tauri-drag-region className="relative w-full h-full">
         <div className="absolute top-[-40px] w-full flex-c-c c-white z-10">
           <p className="bg-black p-[4px_8px]">{tips}</p>
+        </div>
+        <div className="absolute top-50px right-50px z-10">
+          <div className="relative dropdown">
+            <img src={iconMenu} className="h-80px cursor-pointer pb-20px" />
+            <div>
+              <div className="dropdown-menu flex-col-c-c bg-black color-white">
+                <div
+                  onClick={() => {
+                    i18n.changeLanguage(i18n.language === "en" ? "zh" : "en");
+                  }}
+                >
+                  {t("Language")}
+                </div>
+                {kMirrorStates.me && (
+                  <div
+                    onClick={() => {
+                      kMirrorStates.isMe = !kMirrorStates.isMe;
+                      rebuild.current();
+                    }}
+                  >
+                    {t("Switch")}
+                  </div>
+                )}
+                <div onClick={() => open(t("aboutLink"))}>{t("About")}</div>
+                <div onClick={() => exit(0)}>{t("Exit")}</div>
+              </div>
+            </div>
+          </div>
         </div>
         <img
           data-tauri-drag-region
@@ -119,8 +144,8 @@ export function MirrorPage() {
             padding: kMirrorStates.isMe ? "120px" : "100px",
           }}
         >
-          <div className={styles["mirror-preview"]}>
-            <div className={styles["preview-container"]}>
+          <div className="mirror-preview">
+            <div className="preview-container">
               <img
                 data-tauri-drag-region
                 src={

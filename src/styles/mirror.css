@@ -1,3 +1,31 @@
+.dropdown-menu {
+  display: none !important;
+  position: absolute;
+  top: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: pointer;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: flex !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3), 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.dropdown-menu div {
+  width: 100%;
+  padding: 4px 8px;
+  text-align: center;
+  word-break: keep-all;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.dropdown-menu div:hover {
+  background: #fff;
+  color: #000;
+}
+
 .mirror-preview {
   position: relative;
   width: 100%;

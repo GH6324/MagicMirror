@@ -9,6 +9,11 @@
   "Then, drag the photo you want to swap faces with into the mirror.": "然后，把你想要换脸的照片「拖拽」到镜子里",
   "Face swap successful! Image saved locally.": "换脸成功，图片已保存至本地",
   "Face swap failed. Try a different image.": "换脸失败，换张图片再试试",
+  "Exit": "退出",
+  "Language": "切换语言",
+  "Switch": "翻转镜像",
+  "About": "关于",
   "downloadURL": "https://github.com/idootop/MagicMirror/releases/download/server-v1.0.0/server_{{type}}_{{arch}}.zip",
-  "downloadTutorial": "https://github.com/idootop/MagicMirror"
+  "downloadTutorial": "https://github.com/idootop/MagicMirror",
+  "aboutLink": "https://github.com/idootop/MagicMirror"
 }
