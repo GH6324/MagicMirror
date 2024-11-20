@@ -6,10 +6,11 @@
   "permissions": [
     "core:default",
     "core:window:allow-start-dragging",
-    "core:window:allow-set-position",
-    "core:window:allow-set-size",
-    "core:window:allow-center",
     "core:window:allow-close",
+    "core:window:allow-show",
+    "core:app:allow-default-window-icon",
+    "core:menu:allow-set-as-window-menu",
+    "process:default",
     "process:allow-exit",
     "shell:allow-open",
     "shell:allow-spawn",
@@ -38,7 +39,6 @@
           "args": true
         }
       ]
-    },
-    "process:default"
+    }
   ]
 }

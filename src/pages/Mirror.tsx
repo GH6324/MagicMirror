@@ -8,10 +8,11 @@ import { useTranslation } from "react-i18next";
 import "@/styles/mirror.css";
 
 import iconMenu from "@/assets/images/menu.webp";
-import background from "@/assets/images/mirror-bg.webp";
+import background from "@/assets/images/mirror-bg.svg";
 import mirrorInput from "@/assets/images/mirror-input.webp";
 import mirrorMe from "@/assets/images/mirror-me.webp";
 import { open } from "@tauri-apps/plugin-shell";
+import { getCurrentWindow } from "@tauri-apps/api/window";
 
 interface Asset {
   path: string;
@@ -101,7 +102,11 @@ export function MirrorPage() {
         </div>
         <div className="absolute top-50px right-50px z-10">
           <div className="relative dropdown">
-            <img src={iconMenu} className="h-80px cursor-pointer pb-20px" />
+            <img
+              data-tauri-drag-region
+              src={iconMenu}
+              className="h-70px cursor-pointer pb-10px"
+            />
             <div>
               <div className="dropdown-menu flex-col-c-c bg-black color-white">
                 <div
@@ -122,7 +127,9 @@ export function MirrorPage() {
                   </div>
                 )}
                 <div onClick={() => open(t("aboutLink"))}>{t("About")}</div>
-                <div onClick={() => exit(0)}>{t("Exit")}</div>
+                <div onClick={() => getCurrentWindow().close()}>
+                  {t("Quit")}
+                </div>
               </div>
             </div>
           </div>
@@ -155,7 +162,7 @@ export function MirrorPage() {
                       kMirrorStates.input?.src ||
                       background
                 }
-                className="rd-50% w-full h-full object-cover"
+                className="rd-50% w-full h-full object-cover bg-black"
               />
             </div>
           </div>
