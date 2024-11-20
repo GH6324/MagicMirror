@@ -103,7 +103,8 @@ jobs:
         run: |
           pnpm install
           $VERSION = node -p "require('./package.json').version"
-          pnpm tauri build -c "{`"version`":`"$VERSION`"}" -t ${{ matrix.target }} --bundles nsis
+          $jsonConfig = "{`"version`":`"$VERSION`"}"
+          pnpm tauri build -c $jsonConfig -t ${{ matrix.target }} --bundles nsis
           $APP_NAME = "MagicMirror_$VERSION_${{ matrix.build }}_${{ matrix.arch }}"
           node scripts/dist.js ${{ matrix.target }} $APP_NAME
       - name: Upload App
