@@ -17,12 +17,14 @@
         "title": "MagicMirror",
         "width": 650,
         "height": 650,
-        "center": true,
-        "transparent": true,
-        "decorations": false,
         "resizable": false,
         "fullscreen": false,
-        "shadow": false
+        "shadow": false,
+        "center": true,
+        "decorations": false,
+        "transparent": true,
+        "hiddenTitle": true,
+        "titleBarStyle": "Overlay"
       }
     ],
     "security": {
@@ -81,8 +83,7 @@
         "headerImage": "images/nsis_header.bmp",
         "sidebarImage": "images/nsis_sidebar.bmp",
         "installerIcon": "icons/icon.ico",
-        "languages": ["SimpChinese", "English"],
-        "displayLanguageSelector": true
+        "languages": ["English", "SimpChinese"]
       }
     }
   }

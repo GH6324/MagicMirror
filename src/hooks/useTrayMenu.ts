@@ -10,6 +10,7 @@ import trayIcon from "@/assets/images/tray-icon.png";
 import { getCurrentWindow } from "@tauri-apps/api/window";
 import { t } from "i18next";
 import { exit } from "@tauri-apps/plugin-process";
+import { type } from "@tauri-apps/plugin-os";
 
 export function useTrayMenu() {
   useEffect(() => {
@@ -19,6 +20,9 @@ export function useTrayMenu() {
 }
 
 async function initMenu() {
+  if (type() === "windows") {
+    return;
+  }
   const aboutMenu = await Submenu.new({
     text: "About",
     items: [
@@ -51,7 +55,7 @@ async function initMenu() {
 
 async function initTrayMenu() {
   await TrayIcon.new({
-    icon: await getAppIcon(trayIcon),
+    icon: await getAppIcon(type() === "macos" ? trayIcon : appIcon),
     action: (event) => {
       switch (event.type) {
         case "Click":
