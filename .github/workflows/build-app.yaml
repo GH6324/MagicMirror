@@ -141,6 +141,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           name: MagicMirror v${{ steps.version.outputs.version }}
           tag: v${{ steps.version.outputs.version }}
+          body: MagicMirror APP v${{ steps.version.outputs.version }}
           draft: true
           prerelease: false
           makeLatest: latest
