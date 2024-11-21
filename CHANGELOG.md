@@ -4,7 +4,7 @@
 
 # v0.5.0
 
-🚧 跨平台构建与分发（GitHub Action）
+✅ 跨平台构建与分发（GitHub Action）
 
 # v0.4.0
 
