@@ -1,7 +1,7 @@
 [package]
 name = "magic"
 version = "1.0.0"
-description = "Instant AI face swap, hairstyles & outfits—One click to a brand new you!"
+description = "Instant AI Face Swap, Hairstyles & Outfits — One click to a brand new you!"
 authors = ["you"]
 edition = "2021"
 
