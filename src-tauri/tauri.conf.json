@@ -28,8 +28,8 @@
     "security": {
       "csp": {
         "default-src": "'self' asset:",
-        "connect-src": "tauri: http://tauri.localhost ipc: http://ipc.localhost http://localhost:8023",
-        "img-src": "'self' asset: http://asset.localhost blob: data:"
+        "img-src": "'self' asset: http://asset.localhost blob: data:",
+        "connect-src": "tauri: http://tauri.localhost ipc: http://ipc.localhost http://localhost:8023"
       },
       "assetProtocol": {
         "enable": true,
@@ -42,12 +42,48 @@
   "bundle": {
     "active": true,
     "targets": "all",
+    "copyright": "Copyright © 2024 Del Wang",
+    "shortDescription": "AI Face Swap",
+    "longDescription": "Instant AI face swap, hairstyles & outfits—One click to a brand new you!",
     "icon": [
       "icons/32x32.png",
       "icons/128x128.png",
       "icons/128x128@2x.png",
       "icons/icon.icns",
       "icons/icon.ico"
-    ]
+    ],
+    "macOS": {
+      "entitlements": null,
+      "frameworks": [],
+      "providerShortName": null,
+      "signingIdentity": null,
+      "dmg": {
+        "background": "images/dmg-background.jpg",
+        "appPosition": {
+          "x": 180,
+          "y": 170
+        },
+        "applicationFolderPosition": {
+          "x": 480,
+          "y": 170
+        },
+        "windowSize": {
+          "height": 400,
+          "width": 660
+        }
+      }
+    },
+    "windows": {
+      "webviewInstallMode": {
+        "type": "embedBootstrapper"
+      },
+      "nsis": {
+        "headerImage": "images/nsis_header.bmp",
+        "sidebarImage": "images/nsis_sidebar.bmp",
+        "installerIcon": "icons/icon.ico",
+        "languages": ["SimpChinese", "English"],
+        "displayLanguageSelector": true
+      }
+    }
   }
 }
