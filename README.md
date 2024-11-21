@@ -25,6 +25,8 @@ For a detailed guide, please refer to the full [Usage Guide](#).
 
 ## Motivation
 
+![](demo.webp)
+
 Ever found yourself endlessly scrolling through hairstyles and outfits, wondering "How would this look on me?" As someone who loves exploring different styles but hates the hassle, I dreamed of an app that could instantly show me wearing any look I fancy.
 
 While AI technology has advanced tremendously, most AI face applications either require complex setup, demand high-end GPU hardware, or rely on cloud processing that compromises privacy.
