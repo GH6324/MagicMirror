@@ -45,7 +45,7 @@ jobs:
       - name: Setup Rust Cache
         uses: swatinem/rust-cache@v2
         with:
-          workspaces: "src-tauri/${{ matrix.target }} -> target"
+          workspaces: './src-tauri -> target'
       - name: Build APP
         run: |
           pnpm install
@@ -97,7 +97,7 @@ jobs:
       - name: Setup Rust Cache
         uses: swatinem/rust-cache@v2
         with:
-          workspaces: "src-tauri/${{ matrix.target }} -> target"
+          workspaces: './src-tauri -> target'
       - name: Build APP
         shell: pwsh
         run: |
@@ -139,8 +139,8 @@ jobs:
         with:
           allowUpdates: true
           token: ${{ secrets.GITHUB_TOKEN }}
+          tag: app-v${{ steps.version.outputs.version }}
           name: MagicMirror v${{ steps.version.outputs.version }}
-          tag: v${{ steps.version.outputs.version }}
           body: MagicMirror APP v${{ steps.version.outputs.version }}
           draft: true
           prerelease: false
