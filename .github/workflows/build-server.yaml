@@ -1,4 +1,4 @@
-name: Release Python Server
+name: Build Server
 on:
   workflow_dispatch:
 
