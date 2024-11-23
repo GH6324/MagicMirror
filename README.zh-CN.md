@@ -2,7 +2,7 @@
 
 一键 AI 换脸、发型、穿搭，发现更美的自己 ✨
 
-[![GitHub release](https://img.shields.io/github/v/release/idootop/MagicMirror.svg)](https://github.com/idootop/MagicMirror/releases) [![Release MagicMirror](https://github.com/idootop/MagicMirror/actions/workflows/build-app.yaml/badge.svg)](https://github.com/idootop/MagicMirror/actions/workflows/build-app.yaml)
+[![GitHub release](https://img.shields.io/github/v/release/idootop/MagicMirror.svg)](https://github.com/idootop/MagicMirror/releases) [![Release MagicMirror](https://github.com/idootop/MagicMirror/actions/workflows/build-app.yaml/badge.svg)](https://github.com/idootop/MagicMirror/actions/workflows/build-app.yaml) [![QQ](https://img.shields.io/badge/-QQ频道-gray?logo=tencentqq)](https://pd.qq.com/s/btxvzr9de)
 
 ![](src/assets/images/magic-mirror.svg)
 
@@ -15,20 +15,24 @@
 
 ## 快速开始
 
-MagicMirror 目前仅支持 macOS 和 Windows 系统：
+MagicMirror 目前支持 macOS 和 Windows 系统：
 
 1. [下载安装包](https://github.com/idootop/MagicMirror/releases/tag/app-v1.0.0)
-2. [初始化教程](#)
+2. [使用教程](#)
 
-更详细的使用说明和常见问题，请看[使用教程](#)。
+如果你还有其他问题，请到提交 [Issue](https://github.com/idootop/MagicMirror/issues) 或加入 [QQ 交流群](https://pd.qq.com/s/btxvzr9de)。
 
 ## 动机
 
 ![](demo.webp)
 
-我想你跟我一样，有时会纠结自己适合哪种发型，或者哪种穿搭最好看？要是有一个应用可以把看到的喜欢的发型，或者心动的穿搭，直接放到自己身上预览效果，那真是太好了。
+我想你跟我一样，有时会纠结：自己适合哪种发型，或者哪种穿搭最好看？
 
-现在的 AI 技术已经很成熟了，但是市面上大部分的 AI 应用，要么需要配置复杂的参数和运行环境，要有性能足够强劲的 GPU 才能运行，使用门槛和成本偏高，要么需要上传自己的图片到服务器进行转换，存在隐私泄漏的风险。
+要是有一个应用，可以把我们看到的喜欢的发型或心动的穿搭，直接放到自己的身上预览效果，那真是太好了。
+
+现在的 AI 技术已经很成熟了，但是市面上大部分的 AI 换脸应用：
+- 要么需要配置复杂的参数和运行环境，要有性能足够强劲的 GPU 才能运行，使用门槛和成本偏高；
+- 要么需要上传自己的图片到服务器进行转换，存在隐私泄漏的风险。
 
 理想的解决方案应该像自拍一样简单：不需要设置复杂的参数，不用购买昂贵的设备，也无需担心隐私泄漏的问题。
 

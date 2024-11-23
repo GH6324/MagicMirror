@@ -2,7 +2,7 @@
 
 Instant AI Face Swap, Hairstyles & Outfits — One click to a brand new you!
 
-[![中文文档](https://img.shields.io/badge/-中文文档-blue)](./README.zh-CN.md) [![GitHub release](https://img.shields.io/github/v/release/idootop/MagicMirror.svg)](https://github.com/idootop/MagicMirror/releases) [![Release MagicMirror](https://github.com/idootop/MagicMirror/actions/workflows/build-app.yaml/badge.svg)](https://github.com/idootop/MagicMirror/actions/workflows/build-app.yaml)
+[![GitHub release](https://img.shields.io/github/v/release/idootop/MagicMirror.svg)](https://github.com/idootop/MagicMirror/releases) [![Release MagicMirror](https://github.com/idootop/MagicMirror/actions/workflows/build-app.yaml/badge.svg)](https://github.com/idootop/MagicMirror/actions/workflows/build-app.yaml) [![Discord](https://img.shields.io/discord/xxx?logo=discord&logoColor=white)](https://discord.gg/xxx)
 
 ![](src/assets/images/magic-mirror.svg)
 
@@ -16,12 +16,14 @@ Instant AI Face Swap, Hairstyles & Outfits — One click to a brand new you!
 
 ## Installation
 
-To get started with MagicMirror:
+> [👉 中文教程请戳这里](./README.zh-CN.md)
 
-1. Download the Installer: [Download](https://github.com/idootop/MagicMirror/releases/tag/app-v1.0.0)
-2. Follow the Setup Instructions: [Installation Guide](#)
+MagicMirror currently supports macOS and Windows:
 
-For a detailed guide, please refer to the full [Usage Guide](#).
+1. [Download](https://github.com/idootop/MagicMirror/releases/tag/app-v1.0.0)
+2. [Usage Guide](#)
+
+If you have any questions or need assistance, please [submit an issue]((https://github.com/idootop/MagicMirror/issues)) or join our [Discord server]().
 
 ## Motivation
 
