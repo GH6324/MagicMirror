@@ -14,6 +14,6 @@
   "Switch": "Switch",
   "About": "About",
   "downloadURL": "https://github.com/idootop/MagicMirror/releases/download/server-v1.0.0/server_{{type}}_{{arch}}.zip",
-  "downloadTutorial": "https://github.com/idootop/MagicMirror",
+  "downloadTutorial": "https://thread-sphynx-f26.notion.site/MagicMirror-User-Guide-147aea89ebf680c189cdd76f5668261a",
   "aboutLink": "https://github.com/idootop/MagicMirror"
 }

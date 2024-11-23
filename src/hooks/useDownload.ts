@@ -76,6 +76,10 @@ export function useDownload() {
   }, []);
 
   const download = useCallback(async () => {
+    const isDownloaded = await Server.isDownloaded();
+    if (isDownloaded) {
+      return true;
+    }
     try {
       const states = kDownloadStates.getState();
       if (["downloading", "unzipping"].includes(states.status)) {

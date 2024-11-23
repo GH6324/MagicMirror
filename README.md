@@ -2,7 +2,7 @@
 
 Instant AI Face Swap, Hairstyles & Outfits — One click to a brand new you!
 
-[![GitHub release](https://img.shields.io/github/v/release/idootop/MagicMirror.svg)](https://github.com/idootop/MagicMirror/releases) [![Release MagicMirror](https://github.com/idootop/MagicMirror/actions/workflows/build-app.yaml/badge.svg)](https://github.com/idootop/MagicMirror/actions/workflows/build-app.yaml) [![Discord](https://img.shields.io/discord/xxx?logo=discord&logoColor=white)](https://discord.gg/xxx)
+[![GitHub release](https://img.shields.io/github/v/release/idootop/MagicMirror.svg)](https://github.com/idootop/MagicMirror/releases) [![Release MagicMirror](https://github.com/idootop/MagicMirror/actions/workflows/build-app.yaml/badge.svg)](https://github.com/idootop/MagicMirror/actions/workflows/build-app.yaml) [![Discord](https://img.shields.io/discord/1309845147433042002?logo=discord&logoColor=white)](https://discord.gg/87RuMC5smy)
 
 ![](src/assets/images/magic-mirror.svg)
 
@@ -21,9 +21,9 @@ Instant AI Face Swap, Hairstyles & Outfits — One click to a brand new you!
 MagicMirror currently supports macOS and Windows:
 
 1. [Download](https://github.com/idootop/MagicMirror/releases/tag/app-v1.0.0)
-2. [Usage Guide](#)
+2. [Usage Guide](https://thread-sphynx-f26.notion.site/MagicMirror-User-Guide-147aea89ebf680c189cdd76f5668261a)
 
-If you have any questions or need assistance, please [submit an issue]((https://github.com/idootop/MagicMirror/issues)) or join our [Discord server]().
+If you have any questions or need assistance, please [submit an issue](https://github.com/idootop/MagicMirror/issues) or join our [Discord server](https://discord.gg/87RuMC5smy).
 
 ## Motivation
 

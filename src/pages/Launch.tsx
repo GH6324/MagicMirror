@@ -42,17 +42,23 @@ export function LaunchPage() {
     }
   }, [downloadStatus]);
 
-  const launching = ["launching", "running"].includes(launchingStatus) ? (
-    <>
-      <p>{t("Starting... First load may take longer, please wait.")}</p>
-    </>
-  ) : null;
+  const launching =
+    ["idle", "success"].includes(downloadStatus) ||
+    ["launching", "running"].includes(launchingStatus) ? (
+      <>
+        <p>{t("Starting... First load may take longer, please wait.")}</p>
+      </>
+    ) : null;
 
   const downloading = ["downloading", "unzipping", "failed"].includes(
     downloadStatus
   ) ? (
     <>
-      <p>{t("Downloading resources, please wait", { progress })}</p>
+      <p>
+        {t("Downloading resources, please wait", {
+          progress: progress.toFixed(2),
+        })}
+      </p>
       <ProgressBar progress={progress} />
       <p className="c-[rgba(255,255,255,0.6)] text-12px">
         {t(
