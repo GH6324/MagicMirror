@@ -50,23 +50,11 @@ MagicMirror builds upon several outstanding open-source projects:
 
 ## Disclaimer
 
-MagicMirror is designed for personal entertainment and creative purposes only. Please note:
+MagicMirror is designed for personal entertainment and creative purposes only. Commercial use is prohibited. Please note:
 
-- **Ethical Usage**: This software should not be used to create content that:
-  - Impersonates others with malicious intent
-  - Creates or spreads misinformation
-  - Violates personal privacy or dignity
-  - Produces explicit or inappropriate content
-- **Content Rights**: Users are responsible for:
-
-  - Obtaining necessary permissions for using source images
-  - Respecting copyright and intellectual property rights
-  - Following local laws and regulations regarding AI-generated content
-
-- **Liability**: The creators of MagicMirror:
-  - Do not endorse or take responsibility for user-generated content
-  - Cannot guarantee the software's results or accuracy
-  - Are not liable for any misuse or consequences thereof
+- **Ethical Usage**: This software must not be used for activities including, but not limited to: a) impersonating others with malicious intent, b) spreading misinformation, c) violating personal privacy or dignity, d) creating explicit or inappropriate content.
+- **Content Rights**: Users are responsible for: a) obtaining necessary permissions for source images, b) respecting copyrights and intellectual property, c) complying with local laws and regulations on AI-generated content.
+- **Limitation of Liability**: The software and its developers are not liable for any user-generated content. Users assume full responsibility for the use of the generated content and any consequences that may arise from its use.
 
 By using MagicMirror, you agree to these terms and commit to using the software responsibly.
 

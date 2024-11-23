@@ -47,27 +47,15 @@ MagicMirror 的实现主要使用和参考了以下开源项目，特此鸣谢:
 - [InsightFace](https://github.com/deepinsight/insightface): State-of-the-art 2D and 3D Face Analysis Project
 - [Nuitka](https://github.com/Nuitka/Nuitka): Nuitka is a Python compiler written in Python.
 
-## Disclaimer
+## 免责声明
 
-MagicMirror is designed for personal entertainment and creative purposes only. Please note:
+MagicMirror 仅限个人娱乐与创意用途，严禁用于商业用途。请注意：
 
-- **Ethical Usage**: This software should not be used to create content that:
-  - Impersonates others with malicious intent
-  - Creates or spreads misinformation
-  - Violates personal privacy or dignity
-  - Produces explicit or inappropriate content
-- **Content Rights**: Users are responsible for:
+- **道德使用**：本软件不得用于以下行为，包括但不限于：a) 恶意冒充他人，b) 散布虚假信息，c) 侵犯个人隐私或尊严，d) 制作淫秽或不当内容。
+- **内容版权**：用户应对以下内容负责：a) 获取使用源图像的必要许可，b) 尊重版权及知识产权，c) 遵守当地关于 AI 生成内容的法律法规。
+- **免责声明**：用户应对生成的内容以及由其使用引发的任何法律、道德或个人问题承担全部责任。本软件及其开发者对用户生成的内容不承担任何责任。
 
-  - Obtaining necessary permissions for using source images
-  - Respecting copyright and intellectual property rights
-  - Following local laws and regulations regarding AI-generated content
-
-- **Liability**: The creators of MagicMirror:
-  - Do not endorse or take responsibility for user-generated content
-  - Cannot guarantee the software's results or accuracy
-  - Are not liable for any misuse or consequences thereof
-
-By using MagicMirror, you agree to these terms and commit to using the software responsibly.
+使用 MagicMirror 即表示您已阅读并同意上述条款，并承诺负责任地使用本软件。
 
 ## License
 
