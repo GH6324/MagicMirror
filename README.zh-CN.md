@@ -9,7 +9,7 @@
 ## 功能亮点
 
 - 一键换脸：打开安装包，拖张照片进去就能换脸，无需配置各种复杂参数。
-- 超低门槛：不用 GPU 也能运行，小白的普通电脑也可以轻松玩转 AI 换脸。
+- 超低门槛：不用 GPU 也能运行，普通的小白电脑也可以轻松玩转 AI 换脸。
 - 隐私安全：完全在你的电脑本地运行，不需要联网，不用担心你的图片会被上传到任何地方。
 - 极致精简：安装包不到 10 MB，模型文件加起来不到 1 GB，这可能是最轻量的离线换脸应用之一。
 
@@ -20,7 +20,7 @@ MagicMirror 目前支持 macOS 和 Windows 系统：
 1. [下载安装包](https://github.com/idootop/MagicMirror/releases/tag/app-v1.0.0)
 2. [使用教程](#)
 
-如果你还有其他问题，请到提交 [Issue](https://github.com/idootop/MagicMirror/issues) 或加入 [QQ 交流群](https://pd.qq.com/s/btxvzr9de)。
+如果你还有其他问题，请提交 [Issue](https://github.com/idootop/MagicMirror/issues) 或加入 [QQ 交流群](https://pd.qq.com/s/btxvzr9de)。
 
 ## 动机
 
