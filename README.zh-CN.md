@@ -18,7 +18,7 @@
 MagicMirror 目前支持 macOS 和 Windows 系统：
 
 1. [下载安装包](https://github.com/idootop/MagicMirror/releases/tag/app-v1.0.0)
-2. [使用教程](https://docs.qq.com/doc/p/401be525749f8ccc22d5dc68a9cd9063641b49ad)
+2. [使用教程](https://ccnpyvkdfkte.feishu.cn/wiki/LAn6w4NqwiqeKmkXBrLc4MEBnDh)
 
 如果你还有其他问题，请提交 [Issue](https://github.com/idootop/MagicMirror/issues) 或加入 [QQ 交流群](https://pd.qq.com/s/btxvzr9de)。
 
@@ -31,6 +31,7 @@ MagicMirror 目前支持 macOS 和 Windows 系统：
 要是有一个应用，可以把我们看到的喜欢的发型或心动的穿搭，直接放到自己的身上预览效果，那真是太好了。
 
 现在的 AI 技术已经很成熟了，但是市面上大部分的 AI 换脸应用：
+
 - 要么需要配置复杂的参数和运行环境，要有性能足够强劲的 GPU 才能运行，使用门槛和成本偏高；
 - 要么需要上传自己的图片到服务器进行转换，存在隐私泄漏的风险。
 
@@ -52,7 +53,7 @@ Enjoy! ;)
 
 ![](screenshots/train.webp)
 
-相比 [Civitai](https://civitai.com/) 和 [LibLib.AI](https://www.liblib.art/) 等 AI 生图平台，[Tensor.ART](https://tusiart.com/) 的模型数量更多，价格更便宜，性价比应该是这三者里最高的。如果你也想要尝试 AI 生图，或者正在寻找更便宜的生图平台，不妨试试看 [Tensor.ART](https://tusiart.com/)。
+相比 [Civitai](https://civitai.com/) 和 [LibLib.AI](https://www.liblib.art/) 等 AI 生图平台，[Tensor.ART](https://tusiart.com/) 的模型数量更多，价格更便宜，性价比应该是这三者里最高的。如果你也想要尝试 AI 生图，或者正在寻找更有性价比的生图平台，不妨试试看 [Tensor.ART](https://tusiart.com/)。
 
 ## 鸣谢
 
