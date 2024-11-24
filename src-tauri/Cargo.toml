@@ -21,8 +21,8 @@ tauri-build = { version = "2", features = [] }
 tauri = { version = "2", features = [
   "macos-private-api",
   "protocol-asset",
-  "tray-icon",
   "image-png",
+  "devtools",
 ] }
 tauri-plugin-process = "2"
 tauri-plugin-shell = "2"
