@@ -18,7 +18,7 @@
 MagicMirror 目前支持 macOS 和 Windows 系统：
 
 1. [下载安装包](https://github.com/idootop/MagicMirror/releases/tag/app-v1.0.0)
-2. [使用教程](https://ccnpyvkdfkte.feishu.cn/wiki/LAn6w4NqwiqeKmkXBrLc4MEBnDh)
+2. [安装/使用教程](https://ccnpyvkdfkte.feishu.cn/wiki/LAn6w4NqwiqeKmkXBrLc4MEBnDh)
 
 如果你还有其他问题，请提交 [Issue](https://github.com/idootop/MagicMirror/issues) 或加入 [QQ 交流群](https://pd.qq.com/s/btxvzr9de)。
 

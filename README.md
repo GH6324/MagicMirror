@@ -16,12 +16,12 @@ Instant AI Face Swap, Hairstyles & Outfits — One click to a brand new you!
 
 ## Installation
 
-> [👉 中文教程请戳这里](./README.zh-CN.md)
+> [👉 中文教程和下载地址请戳这里](./README.zh-CN.md)
 
 MagicMirror currently supports macOS and Windows:
 
 1. [Download](https://github.com/idootop/MagicMirror/releases/tag/app-v1.0.0)
-2. [Usage Guide](https://thread-sphynx-f26.notion.site/MagicMirror-User-Guide-147aea89ebf680c189cdd76f5668261a)
+2. [Installation Guide](https://thread-sphynx-f26.notion.site/MagicMirror-User-Guide-147aea89ebf680c189cdd76f5668261a)
 
 If you have any questions or need assistance, please [submit an issue](https://github.com/idootop/MagicMirror/issues) or join our [Discord server](https://discord.gg/87RuMC5smy).
 
