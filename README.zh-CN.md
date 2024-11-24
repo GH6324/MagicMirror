@@ -24,7 +24,7 @@ MagicMirror 目前支持 macOS 和 Windows 系统：
 
 ## 动机
 
-![](demo.webp)
+![](screenshots/demo.webp)
 
 我想你跟我一样，有时会纠结：自己适合哪种发型，或者哪种穿搭最好看？
 
@@ -41,6 +41,18 @@ MagicMirror 目前支持 macOS 和 Windows 系统：
 于是便有了 MagicMirror ✨
 
 Enjoy! ;)
+
+## One More Thing
+
+如你所见，MagicMirror 内的所有设计资源：从 Logo、字体到 UI 界面，都是由 AI 生成的 ✨
+
+![](screenshots/aigc.webp)
+
+这里我使用的是 [Tensor.ART](https://tusiart.com/)：一个免费的在线 AI 生图网站。像最新的 Flux 和 SD 3.5 等模型都可以直接使用，而且你也可以在线训练自己的模型。比如 MagicMirror 的 LOGO， 就是我从 Dribbble 上搜集了一些参考图，然后用 Flux 做底模训练的一个模型生成的，非常方便。
+
+![](screenshots/train.webp)
+
+相比 [Civitai](https://civitai.com/) 和 [LibLib.AI](https://www.liblib.art/) 等 AI 生图平台，[Tensor.ART](https://tusiart.com/) 的模型数量更多，价格更便宜，性价比应该是这三者里最高的。如果你也想要尝试 AI 生图，或者正在寻找更便宜的生图平台，不妨试试看 [Tensor.ART](https://tusiart.com/)。
 
 ## 鸣谢
 

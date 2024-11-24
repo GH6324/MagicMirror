@@ -27,7 +27,7 @@ If you have any questions or need assistance, please [submit an issue](https://g
 
 ## Motivation
 
-![](demo.webp)
+![](screenshots/demo.webp)
 
 Ever found yourself endlessly scrolling through hairstyles and outfits, wondering "How would this look on me?" As someone who loves exploring different styles but hates the hassle, I dreamed of an app that could instantly show me wearing any look I fancy.
 
@@ -40,6 +40,18 @@ So, why not build one myself?
 And that’s how MagicMirror came to life ✨
 
 Enjoy! ;)
+
+## One More Thing
+
+Every design element in MagicMirror - from the logo and typography to the UI - was created using AI ✨
+
+![](screenshots/aigc.webp)
+
+I used [Tensor.ART](https://tusiart.com/), a free AI image generation platform. It offers access to the latest models like Flux and SD 3.5, plus the ability to train your own custom models. For example, I created MagicMirror's logo by training a Flux-based model on reference images collected from Dribbble - quick and simple.
+
+![](screenshots/train.webp)
+
+Compared to platforms like [Civitai](https://civitai.com/) and [LibLib.AI](https://www.liblib.art/), [Tensor.ART](https://tusiart.com/) has more models at a lower price, making it the most cost-effective option. If you're looking to try AI image generation or want a more affordable platform, I recommend giving [Tensor.ART](https://tusiart.com/) a try.
 
 ## Acknowledgments
 
