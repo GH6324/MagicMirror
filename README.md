@@ -2,9 +2,9 @@
 
 Instant AI Face Swap, Hairstyles & Outfits — One click to a brand new you!
 
-[![GitHub release](https://img.shields.io/github/v/release/idootop/MagicMirror.svg)](https://github.com/idootop/MagicMirror/releases) [![Release MagicMirror](https://github.com/idootop/MagicMirror/actions/workflows/build-app.yaml/badge.svg)](https://github.com/idootop/MagicMirror/actions/workflows/build-app.yaml) [![Discord](https://img.shields.io/discord/1309845147433042002?logo=discord&logoColor=white)](https://discord.gg/87RuMC5smy)
+[![GitHub release](https://img.shields.io/github/v/release/idootop/MagicMirror.svg)](https://github.com/idootop/MagicMirror/releases) [![Build APP](https://github.com/idootop/MagicMirror/actions/workflows/build-app.yaml/badge.svg)](https://github.com/idootop/MagicMirror/actions/workflows/build-app.yaml) [![Build Server](https://github.com/idootop/MagicMirror/actions/workflows/build-server.yaml/badge.svg)](https://github.com/idootop/MagicMirror/actions/workflows/build-server.yaml)
 
-![](src/assets/images/magic-mirror.svg)
+![](./docs/assets/banner.jpg)
 
 ## Features
 
@@ -14,20 +14,21 @@ Instant AI Face Swap, Hairstyles & Outfits — One click to a brand new you!
 - **Privacy First**: Completely offline processing - your images never leave your device
 - **Ultra-Lightweight**: Tiny footprint with <10MB installer and <1GB model files
 
-## Installation
+## Get Started
 
-> [👉 中文教程和下载地址请戳这里](./README.zh-CN.md)
+> [👉 中文教程和下载地址请戳这里](./docs/cn/readme.md)
 
-MagicMirror currently supports macOS and Windows:
+To get started with MagicMirror:
 
-1. [Download](https://github.com/idootop/MagicMirror/releases/tag/app-v1.0.0)
-2. [Installation Guide](https://thread-sphynx-f26.notion.site/MagicMirror-User-Guide-147aea89ebf680c189cdd76f5668261a)
+1. Follow the [Installation Guide](./docs/en/install.md)
+2. Check out the [Usage Guide](./docs/en/usage.md)
+3. See the [FAQ](./docs/en/faq.md) for common issues
 
-If you have any questions or need assistance, please [submit an issue](https://github.com/idootop/MagicMirror/issues) or join our [Discord server](https://discord.gg/87RuMC5smy).
+If you have any questions, please [submit an issue](https://github.com/idootop/MagicMirror/issues).
 
 ## Motivation
 
-![](screenshots/demo.webp)
+![](./docs/assets/demo.webp)
 
 Ever found yourself endlessly scrolling through hairstyles and outfits, wondering "How would this look on me?" As someone who loves exploring different styles but hates the hassle, I dreamed of an app that could instantly show me wearing any look I fancy.
 
@@ -40,18 +41,6 @@ So, why not build one myself?
 And that’s how MagicMirror came to life ✨
 
 Enjoy! ;)
-
-## One More Thing
-
-Every design element in MagicMirror - from the logo and typography to the UI - was created using AI ✨
-
-![](screenshots/aigc.webp)
-
-I used [Tensor.ART](https://tensor.art/), a free AI image generation platform. It offers access to the latest models like Flux and SD 3.5, plus the ability to train your own custom models. For example, I created MagicMirror's logo by training a Flux-based model on reference images collected from Dribbble - quick and simple.
-
-![](screenshots/train.webp)
-
-Compared to platforms like [Civitai](https://civitai.com/) and [LibLib.AI](https://www.liblib.art/), [Tensor.ART](https://tensor.art/) has more models at a lower price, making it the most cost-effective option. If you're looking to try AI image generation or want a more affordable platform, I recommend giving [Tensor.ART](https://tensor.art/) a try.
 
 ## Acknowledgments
 
