@@ -15,7 +15,7 @@
 
 ## 快速开始
 
-> 视频简介：https://www.bilibili.com/video/BV1TTzfYDEUe
+> 🔥 演示视频：https://www.bilibili.com/video/BV1TTzfYDEUe
 
 MagicMirror 目前支持 macOS 和 Windows 系统：
 
