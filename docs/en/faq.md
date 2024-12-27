@@ -59,6 +59,10 @@ To fix this:
 
 > For details on Nuitka false positives in Windows Defender, [click here](https://github.com/Nuitka/Nuitka/issues/2685#issuecomment-1923357489).
 
+If none of the above work, your system likely has compatibility issues with the server. Consider using alternative face swap tools like [TinyFace](https://github.com/idootop/TinyFace) (the underlying library used by MagicMirror), or [FaceFusion](https://github.com/facefusion/facefusion). 
+
+Learn more: https://github.com/idootop/MagicMirror/issues/6#issuecomment-2560949972
+
 ### 【Windows】Face Swap Fails with Any Image
 
 First, check if the `server.exe` file exists in `$HOME/MagicMirror/`. If it’s missing, follow the steps in the previous section to restore it.
@@ -77,7 +81,9 @@ The recommended environment is Windows 11 x64. MagicMirror may not run properly 
 
 First-time startup on macOS can be slow. If the app doesn’t start within 30 minutes, close it and try again.
 
-If it still doesn’t launch, ensure your macOS version is at least `10.13`, as older versions may not be compatible.
+If it still doesn’t launch, ensure your macOS version is at least `14` (Sonoma), as older versions may not be compatible.
+
+Learn more: https://github.com/521xueweihan/HelloGitHub/issues/2859#issuecomment-2562637177
 
 ## Other
 

@@ -58,6 +58,8 @@ MagicMirror 默认使用 CPU 进行推理，暂不支持启用硬件加速选项
 
 > 如果你对 Nuitka 被 Widnows 安全应用误报感兴趣，可以[查看此处](https://github.com/Nuitka/Nuitka/issues/2685#issuecomment-1923357489)了解更多技术细节。
 
+如果仍然启动失败，查看此处了解更多：https://github.com/idootop/MagicMirror/issues/6#issuecomment-2560949972
+
 ### 【Windows】不管使用什么图片都提示换脸失败
 
 首先检查你的 `$HOME/MagicMirror/server.exe` 文件是否存在，如果不存在请按照上一个问题的方法处理。
@@ -76,7 +78,9 @@ MagicMirror 目前只提供了 x64 和 ARM64 架构的安装包，对于较老�
 
 macOS 首次启动较慢，如果超过 30 分钟仍未正常启动，请关闭应用后重试。
 
-如果重启后还是无法正常启动，请检查你的 macOS 系统是否高于 10.13 版本，较老的 macOS 系统可能无法正常运行。
+如果重启后还是无法正常启动，请检查你的 macOS 系统是否不低于 14 版本 (Sonoma)，较老的 macOS 系统可能无法正常运行。
+
+查看此处了解更多信息：https://github.com/521xueweihan/HelloGitHub/issues/2859#issuecomment-2562637177
 
 ## 其他问题
 
