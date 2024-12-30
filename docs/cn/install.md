@@ -28,7 +28,7 @@
 - [server_macos_aarch64.zip](https://github.com/idootop/MagicMirror/releases/download/server-v1.0.0/server_macos_aarch64.zip)（macOS, 苹果芯片，比如 M1、M4 芯片）
 - [server_macos_x86_64.zip](https://github.com/idootop/MagicMirror/releases/download/server-v1.0.0/server_macos_x86_64.zip)（macOS, Intel 芯片）
 
-> 如果你访问不了上面的 GitHub 下载链接，可以使用国内的[下载地址](https://pan.quark.cn/s/582257e58924)
+> 如果你访问不了上面的 GitHub 下载链接，可以使用国内的[下载地址](https://pan.quark.cn/s/b8ad043794bb)
 
 **解压下载的文件**
 
