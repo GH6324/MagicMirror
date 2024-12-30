@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "magic"
-version = "1.0.0"
+version = "2.0.0"
 description = "Instant AI Face Swap, Hairstyles & Outfits — One click to a brand new you!"
 authors = ["Del Wang <hello@xbox.work>"]
 
@@ -14,7 +14,7 @@ bottle = "^0.13.2"
 black = "^24.10.0"
 mypy = "^1.13.0"
 pylint = "^3.3.1"
-nuitka = "^2.4.11"
+nuitka = "^2.5.9"
 
 
 [tool.mypy]

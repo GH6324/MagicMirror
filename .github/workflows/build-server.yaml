@@ -42,11 +42,11 @@ jobs:
         include:
           - target: aarch64-apple-darwin
             build: macos
-            os: macos-latest
+            os: macos-13-arm
             arch: aarch64
           - target: x86_64-apple-darwin
             build: macos
-            os: macos-latest
+            os: macos-13
             arch: x86_64
 
     runs-on: ${{ matrix.os }}
@@ -93,12 +93,8 @@ jobs:
         include:
           - target: x86_64-pc-windows-msvc
             build: windows
-            os: windows-latest
+            os: windows-2019
             arch: x86_64
-          - target: aarch64-pc-windows-msvc
-            build: windows
-            os: windows-latest
-            arch: aarch64
 
     runs-on: ${{ matrix.os }}
     steps:
@@ -157,7 +153,7 @@ jobs:
           name: Server v${{ needs.models.outputs.version }}
           tag: server-v${{ needs.models.outputs.version }}
           body: MagicMirror Server v${{ needs.models.outputs.version }}
-          draft: false
+          draft: true
           prerelease: false
           removeArtifacts: true
           artifacts: dist/*.zip
