@@ -17,13 +17,13 @@
 
 > 🔥 演示视频：https://www.bilibili.com/video/BV1TTzfYDEUe
 
-MagicMirror 目前支持 macOS 和 Windows 系统：
+MagicMirror 仅支持 macOS 13（Ventura）和 Windows 10 及以上版本系统：
 
 1. [安装教程](./install.md)
 2. [使用教程](./usage.md)
 3. [常见问题](./faq.md)（90%的问题可以在这里找到答案）
 
-如果你还有其他问题，请提交 [Issue](https://github.com/idootop/MagicMirror/issues)。
+如果你有其他问题，请提交 [Issue](https://github.com/idootop/MagicMirror/issues)。
 
 ## 动机
 

@@ -81,7 +81,7 @@ The recommended environment is Windows 11 x64. MagicMirror may not run properly 
 
 First-time startup on macOS can be slow. If the app doesn’t start within 30 minutes, close it and try again.
 
-If it still doesn’t launch, ensure your macOS version is at least `14` (Sonoma), as older versions may not be compatible.
+If it still doesn’t launch, ensure your macOS version is at least `13` (Ventura), as older versions may not be compatible.
 
 Learn more: https://github.com/521xueweihan/HelloGitHub/issues/2859#issuecomment-2562637177
 

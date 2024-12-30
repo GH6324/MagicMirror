@@ -10,7 +10,6 @@ MagicMirror 默认使用 CPU 进行推理，暂不支持启用硬件加速选项
 
 不过你可以尝试 MagicMirror 的 CLI 版本 [TinyFace](https://github.com/idootop/TinyFace)，或者使用 [FaceFusion](https://github.com/facefusion/facefusion)。
 
-
 ### MagicMirror 的体积为什么那么小，是怎么做到的？
 
 这多亏了 [Tauri](https://tauri.app/)，它使用系统自带的 WebView 组件，所以不用像 [Electron](https://www.electronjs.org/) 那样直接把整个 Chromium 浏览器和 Node.js 运行时打包进应用安装包。如果你对此感兴趣，可以在这里了解更多[技术细节](https://tauri.app/start/)。
@@ -35,22 +34,50 @@ MagicMirror 默认使用 CPU 进行推理，暂不支持启用硬件加速选项
 
 ### 【macOS】打开 APP 时提示: “MagicMirror”已损坏，无法打开。 你应该将它移到废纸篓。
 
-这是因为开发者并没有为 APP 签名，你可以：
+这是因为 macOS 默认只允许从 App Store 或已知的开发者来源安装应用，以保护用户的安全和隐私。
+
+但是目前我还没有注册苹果开发者账号（$99 一年），所以无法为 MagicMirror 提供有效的签名并上架应用商店。
+
+你可以：
 
 1. 打开访达，然后在右侧菜单栏选择应用程序
 2. 找到提示无法验证的应用，右键点击打开即可
 
 ![](../assets/macos-open.png)
 
+如果在运行过程中仍然弹窗提示无法打开“xxx”（尤其是 macOS 15 系统版本及以上），
+
+请自行百度 **macOS 如何开启任何来源**，参考：https://www.ghxi.com/jc202309058.html
+
+### 【Windows】提示不是有效的 Win32 应用
+
+MagicMirror 目前只提供了 x64 和 ARM64 架构的安装包，对于较老的 x32 电脑暂不支持。
+
+推荐的运行环境是 Windows 11，如果低于 Windows 10 可能会无法正常运行。
+
 ## 运行问题
+
+### 【macOS】卡在启动界面超过 10 分钟
+
+如果你的电脑非 Intel 芯片（比如：M1、M4 芯片），首次启动 APP 时需要进行 Rosatta 转译，大概 3-5 分钟左右。
+
+后续启动将恢复正常时长（5-10s）。如果超过 10 分钟仍未正常启动，请关闭应用后重试。
+
+如果重启后还是无法正常启动，请检查你的 macOS 系统是否不低于 13 版本 (macOS Ventura)，较老的 macOS 系统可能无法正常运行。
+
+查看此处了解更多信息：https://github.com/521xueweihan/HelloGitHub/issues/2859#issuecomment-2562637177
 
 ### 【Windows】卡在启动界面超过 10 分钟
 
-如果你在 Windows 系统上一直卡在启动界面，请检查你的 `$HOME/MagicMirror/server.exe` 文件是否存在。这是使用 [Nuitka](https://github.com/Nuitka/Nuitka) 编译的一个 Python 应用程序，MagicMirror 的正常运行离不开此程序。
+如果你在 Windows 系统上一直卡在启动界面，请检查你的 `$HOME/MagicMirror/server.exe` 文件是否存在。
+
+这是使用 [Nuitka](https://github.com/Nuitka/Nuitka) 编译的一个 Python 应用程序，MagicMirror 的正常运行离不开此程序。
 
 ![](../assets/windows-home.png)
 
-遗憾的是由于许多病毒软件也喜欢使用 Nuitka 来编译他们的应用程序，混淆源代码隐藏自己的恶意行为特征，所以同样使用 Nuitka 编译的 `server.exe` 文件，在启动时容易被 Windows 安全应用误标记为病毒文件并删除。
+由于许多病毒软件也喜欢使用 Nuitka 来编译他们的应用程序，从而混淆源代码隐藏自己的恶意行为特征。
+
+所以同样使用 Nuitka 编译的 `server.exe` 文件，在启动时也容易被 Windows 安全应用误标记为病毒文件并删除。
 
 ![](../assets/windows-defender.jpg)
 
@@ -60,27 +87,9 @@ MagicMirror 默认使用 CPU 进行推理，暂不支持启用硬件加速选项
 
 如果仍然启动失败，查看此处了解更多：https://github.com/idootop/MagicMirror/issues/6#issuecomment-2560949972
 
-### 【Windows】不管使用什么图片都提示换脸失败
+### 提示换脸失败
 
-首先检查你的 `$HOME/MagicMirror/server.exe` 文件是否存在，如果不存在请按照上一个问题的方法处理。
-
-![](../assets/windows-home.png)
-
-如果还是不行，请在此处[提交反馈](https://github.com/idootop/MagicMirror/issues)。
-
-### 【Windows】提示不是有效的 Win32 应用
-
-MagicMirror 目前只提供了 x64 和 ARM64 架构的安装包，对于较老的 x32 电脑暂不支持。
-
-推荐的运行环境是 Windows 11 x64 版本，如果低于 Windows 10 可能会无法正常运行。
-
-### 【macOS】卡在启动界面超过 10 分钟
-
-macOS 首次启动较慢，如果超过 30 分钟仍未正常启动，请关闭应用后重试。
-
-如果重启后还是无法正常启动，请检查你的 macOS 系统是否不低于 14 版本 (Sonoma)，较老的 macOS 系统可能无法正常运行。
-
-查看此处了解更多信息：https://github.com/521xueweihan/HelloGitHub/issues/2859#issuecomment-2562637177
+你可以换几张其他的图片试试看。比较冷门的图片格式、文件名包含特殊字符、图片分辨率过大等都可能会导致换脸失败。
 
 ## 其他问题
 

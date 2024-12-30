@@ -26,6 +26,8 @@ To get started with MagicMirror:
 
 If you have any questions, please [submit an issue](https://github.com/idootop/MagicMirror/issues).
 
+> Note: MagicMirror only supports macOS 13 (Ventura) and Windows 10 and above.
+
 ## Motivation
 
 ![](./docs/assets/demo.webp)
