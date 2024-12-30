@@ -42,7 +42,7 @@ jobs:
         include:
           - target: aarch64-apple-darwin
             build: macos
-            os: macos-14-arm
+            os: macos-13-arm64
             arch: aarch64
           # - target: x86_64-apple-darwin
           #   build: macos
