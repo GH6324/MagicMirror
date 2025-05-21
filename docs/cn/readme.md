@@ -1,6 +1,6 @@
 # MagicMirror
 
-一键 AI 换脸、发型、穿搭，发现更美的自己 ✨
+一键 AI 换脸，发现更美的自己 ✨
 
 [![GitHub release](https://img.shields.io/github/v/release/idootop/MagicMirror.svg)](https://github.com/idootop/MagicMirror/releases) [![Build APP](https://github.com/idootop/MagicMirror/actions/workflows/build-app.yaml/badge.svg)](https://github.com/idootop/MagicMirror/actions/workflows/build-app.yaml) [![Build Server](https://github.com/idootop/MagicMirror/actions/workflows/build-server.yaml/badge.svg)](https://github.com/idootop/MagicMirror/actions/workflows/build-server.yaml)
 
@@ -27,7 +27,8 @@ MagicMirror 仅支持 macOS 13（Ventura）和 Windows 10 及以上版本系统�
 
 ## 动机
 
-![](../assets/demo.webp)
+![391785246-b3b52898-4d43-40db-8fbe-acbc00d78eec](https://github.com/user-attachments/assets/6500a393-69e7-42c9-bf78-febc84d7e5e5)
+
 
 我想你跟我一样，有时会纠结：自己适合哪种发型，或者哪种穿搭最好看？
 
