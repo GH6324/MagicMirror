@@ -1,6 +1,6 @@
 # MagicMirror
 
-Instant AI Face Swap, Hairstyles & Outfits — One click to a brand new you!
+Instant AI Face Swap — One click to a brand new you!
 
 [![GitHub release](https://img.shields.io/github/v/release/idootop/MagicMirror.svg)](https://github.com/idootop/MagicMirror/releases) [![Build APP](https://github.com/idootop/MagicMirror/actions/workflows/build-app.yaml/badge.svg)](https://github.com/idootop/MagicMirror/actions/workflows/build-app.yaml) [![Build Server](https://github.com/idootop/MagicMirror/actions/workflows/build-server.yaml/badge.svg)](https://github.com/idootop/MagicMirror/actions/workflows/build-server.yaml)
 
@@ -30,7 +30,7 @@ If you have any questions, please [submit an issue](https://github.com/idootop/M
 
 ## Motivation
 
-![](./docs/assets/demo.webp)
+![391785246-b3b52898-4d43-40db-8fbe-acbc00d78eec](https://github.com/user-attachments/assets/64ba0436-d7c2-4e81-bc4a-9ec00b5b7d7a)
 
 Ever found yourself endlessly scrolling through hairstyles and outfits, wondering "How would this look on me?" As someone who loves exploring different styles but hates the hassle, I dreamed of an app that could instantly show me wearing any look I fancy.
 
