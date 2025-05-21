@@ -51,10 +51,11 @@ Enjoy! ;)
 
 MagicMirror 的实现主要使用和参考了以下开源项目，特此鸣谢:
 
-- [Tauri](https://github.com/tauri-apps/tauri): Build smaller, faster, and more secure desktop and mobile applications with a web frontend.
+- [TinyFace](https://github.com/idootop/TinyFace): The minimalist face swapping tool that just works. 
 - [FaceFusion](https://github.com/facefusion/facefusion): Industry leading face manipulation platform
 - [InsightFace](https://github.com/deepinsight/insightface): State-of-the-art 2D and 3D Face Analysis Project
 - [Nuitka](https://github.com/Nuitka/Nuitka): Nuitka is a Python compiler written in Python.
+- [Tauri](https://github.com/tauri-apps/tauri): Build smaller, faster, and more secure desktop and mobile applications with a web frontend.
 
 ## 免责声明
 
