@@ -69,4 +69,4 @@ MagicMirror 仅限个人娱乐与创意用途，严禁用于商业用途。请�
 
 ## License
 
-This project is licensed under the [MIT License](./LICENSE).
+MIT License © 2025-PRESENT [Del Wang](https://del.wang)

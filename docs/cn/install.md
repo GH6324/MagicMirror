@@ -6,10 +6,16 @@
 
 首先根据你的操作系统，下载对应的 APP 安装包并安装：
 
-1. Windows: [MagicMirror_1.0.0_windows_x86_64.exe](https://github.com/idootop/MagicMirror/releases/download/app-v1.0.0/MagicMirror_1.0.0_windows_x86_64.exe)
-2. macOS: [MagicMirror_1.0.0_macos_universal.dmg](https://github.com/idootop/MagicMirror/releases/download/app-v1.0.0/MagicMirror_1.0.0_macos_universal.dmg)
+1. Windows: [MagicMirror_1.0.0_windows_x86_64.exe](https://gh-proxy.com/github.com/idootop/MagicMirror/releases/download/app-v1.0.0/MagicMirror_1.0.0_windows_x86_64.exe)
+2. macOS: [MagicMirror_1.0.0_macos_universal.dmg](https://gh-proxy.com/github.com/idootop/MagicMirror/releases/download/app-v1.0.0/MagicMirror_1.0.0_macos_universal.dmg)
 
-> 如果你访问不了上面的 GitHub 下载链接，请使用国内[下载地址](https://del-wang.lanzout.com/b01qdt5nba) 密码: `4ro2`
+## 安装依赖（Windows）
+
+![](../assets/msvc.png)
+
+对于 Windows 用户，需要先安装 Microsoft Visual C++ 运行时才能正常运行。
+
+下载地址：https://aka.ms/vs/17/release/vc_redist.x64.exe
 
 ## 下载模型
 
@@ -21,12 +27,11 @@
 
 **下载模型文件**
 
-首先根据你的操作系统和架构，选择对应的模型文件：
+首先根据你的操作系统，选择对应的模型文件：
+https://gh-proxy.com/github.com/idootop/MagicMirror/releases/download/server-v1.0.0/server_windows_x86_64.zip
 
-- [server_windows_x86_64.zip](https://github.com/idootop/MagicMirror/releases/download/server-v1.0.0/server_windows_x86_64.zip)（Windows，大多数的电脑都是这种）
-- [server_windows_aarch64.zip](https://github.com/idootop/MagicMirror/releases/download/server-v1.0.0/server_windows_aarch64.zip)（Windows，如果你是 ARM64 设备）
-- [server_macos_aarch64.zip](https://github.com/idootop/MagicMirror/releases/download/server-v1.0.0/server_macos_aarch64.zip)（macOS, 苹果芯片，比如 M1、M4 芯片）
-- [server_macos_x86_64.zip](https://github.com/idootop/MagicMirror/releases/download/server-v1.0.0/server_macos_x86_64.zip)（macOS, Intel 芯片）
+- [server_windows_x86_64.zip](https://gh-proxy.com/github.com/idootop/MagicMirror/releases/download/server-v1.0.0/server_windows_x86_64.zip)
+- [server_macos_x86_64.zip](https://gh-proxy.com/github.com/idootop/MagicMirror/releases/download/server-v1.0.0/server_macos_x86_64.zip)
 
 > 如果你访问不了上面的 GitHub 下载链接，可以使用国内的[下载地址](https://pan.quark.cn/s/b8ad043794bb)
 

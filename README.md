@@ -66,4 +66,4 @@ By using MagicMirror, you agree to these terms and commit to using the software 
 
 ## License
 
-This project is licensed under the [MIT License](./LICENSE).
+MIT License © 2024-PRESENT [Del Wang](https://del.wang)

@@ -20,5 +20,6 @@
     ".venv": true,
     "build": true,
     ".mypy_cache": true
-  }
+  },
+  "i18n-ally.localesPaths": ["src/assets/locales"]
 }

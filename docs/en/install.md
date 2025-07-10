@@ -8,7 +8,12 @@ Download and install the MagicMirror installer for your operating system:
 
 1. Windows: [MagicMirror_1.0.0_windows_x86_64.exe](https://github.com/idootop/MagicMirror/releases/download/app-v1.0.0/MagicMirror_1.0.0_windows_x86_64.exe)
 2. macOS: [MagicMirror_1.0.0_macos_universal.dmg](https://github.com/idootop/MagicMirror/releases/download/app-v1.0.0/MagicMirror_1.0.0_macos_universal.dmg)
-3. Other: [Go to Release](https://github.com/idootop/MagicMirror/releases/app-v1.0.0)
+
+## Install Dependencies (Windows)
+
+![](../assets/msvc.png)
+
+For Windows users, you need to install the Microsoft Visual C++ Redistributable to run MagicMirror. Download it here: https://aka.ms/vs/17/release/vc_redist.x64.exe
 
 ## Download Models
 
@@ -22,10 +27,8 @@ If the download progress is stuck at 0% or stops midway, follow these steps for 
 
 Choose the model file that matches your operating system:
 
-- [server_windows_x86_64.zip](https://github.com/idootop/MagicMirror/releases/download/server-v1.0.0/server_windows_x86_64.zip)（Windows, most common）
-- [server_windows_aarch64.zip](https://github.com/idootop/MagicMirror/releases/download/server-v1.0.0/server_windows_aarch64.zip)（Windows, for ARM64 devices）
-- [server_macos_aarch64.zip](https://github.com/idootop/MagicMirror/releases/download/server-v1.0.0/server_macos_aarch64.zip)（macOS, Apple Silicon, such as M1, M4 chips）
-- [server_macos_x86_64.zip](https://github.com/idootop/MagicMirror/releases/download/server-v1.0.0/server_macos_x86_64.zip)（macOS, Intel chips）
+- [server_windows_x86_64.zip](https://github.com/idootop/MagicMirror/releases/download/server-v1.0.0/server_windows_x86_64.zip)
+- [server_macos_x86_64.zip](https://github.com/idootop/MagicMirror/releases/download/server-v1.0.0/server_macos_x86_64.zip)
 
 **Extract the Downloaded File**
 
